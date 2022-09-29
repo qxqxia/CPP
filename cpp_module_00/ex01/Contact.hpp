@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:44:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/09/12 14:48:34 by qxia             ###   ########.fr       */
+/*   Updated: 2022/09/29 16:14:50 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define CONTACT_HPP
 
 #include <iostream>
-#include <string>
+#include <string>  //string et getline
 #include <cstdlib>
-#include <iomapip>
+//#include <iomapip>
 
 class Contact {
 
@@ -35,7 +35,7 @@ class Contact {
 		void set_nickname(std::string nickname);
 		void set_phone_number(std::string phone_number);
 		void set_darkest_secret(std::string secret);
-		int	create_new_contact(void);
+
 
 	private:
 		std::string first_name;
