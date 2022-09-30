@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:44:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/09/29 16:27:33 by qxia             ###   ########.fr       */
+/*   Updated: 2022/09/30 15:29:54 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ class Contact {
 		void set_nickname(std::string nickname);
 		void set_phone_number(std::string phone_number);
 		void set_darkest_secret(std::string secret);
+
+		int	creat_new_contact(void);
 
 
 	private:
