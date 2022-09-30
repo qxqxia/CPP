@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:41 by qxia              #+#    #+#             */
-/*   Updated: 2022/09/29 14:20:05 by qxia             ###   ########.fr       */
+/*   Updated: 2022/09/30 12:05:44 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,28 @@ PhoneBook::PhoneBook() {
     return;
 };
 
-PhoneBook::~PhoneBook() {
-    for(int i = 0; i < CONTACT_MAX; i++)
-        this->contacts[i].clear_info();
-    return;
-};
+int main(void){
+    PhoneBook awesomebook;
+    std::string input   "";
+    int         index = 0;
+
+    while (input != 'EXIT'){
+        std::cout << "You have three choices(ADD, SEARCH, or EXIT):"
+        std::getline(std::cin, input);
+        if (input == "ADD"){
+            if (index == 8)
+                index = 0;
+            Contact new_contact;
+            awesomebook.add_contact(index, new_contact);
+            index++;
+        }
+        else if (input == "SEARCH"){
+            
+        }
+    }
+    std::cout << endl;
+    return (0);
+}
 
 
 

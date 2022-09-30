@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:44:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/09/29 16:14:50 by qxia             ###   ########.fr       */
+/*   Updated: 2022/09/29 16:27:33 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Contact {
 		contact(void);
 		~contact(void);
 		
-		std::string get_first_name(void) const;
+		std::string get_first_name(void) const; //why const
 		std::string get_last_name(void) const;
 		std::string get_nickname(void) const;
 		std::string get_phone_number(void) const;
