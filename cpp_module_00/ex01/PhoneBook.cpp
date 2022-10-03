@@ -6,7 +6,7 @@
 /*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:41 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/03 21:55:14 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/10/03 22:57:00 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int main(void)
     int index = 0;  // index of each contact
     std::string input;
 
-    while (true)
+    while (input != "EXIT")
     {
         book.showMenu();
         std::getline(std::cin, input);

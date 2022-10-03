@@ -6,7 +6,7 @@
 /*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:44:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/03 21:59:04 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/10/03 23:03:58 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 	{
 		this->secret = secret;
 	}
-	std::string get_first_name(void) const
+	std::string get_first_name(void) const // cannot change when read
 	{
 		return (this->first_name);
 	}
