@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qxia <marvin@42.fr>                        +#+  +:+       +#+         #
+#    By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/08 12:20:32 by qxia              #+#    #+#              #
-#    Updated: 2022/09/08 15:38:00 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/03 21:56:16 by qinxia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 NAME	:= My_awesome_phonebook
 
-SRCS	:= contact.cpp \
-		phonebook.cpp \
+SRCS	:= Contact.cpp \
+		PhoneBook.cpp \
 
 OBJS	:= $(SRCS:%.cpp=%.o)
 

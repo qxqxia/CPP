@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:33:58 by qxia              #+#    #+#             */
-/*   Updated: 2022/09/30 16:35:26 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/03 22:12:36 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
-
+#include <iostream>
+#include <ctime>
