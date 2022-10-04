@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:41:06 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/03 21:58:58 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/10/04 11:06:22 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,19 @@
 
 #define MAX 8
 
-class PhoneBook
-{
+class PhoneBook{
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
 
-public:
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void showMenu(void);
-	void addContact(int index, Contact new_contact);
-	void showContact(void);
-	int emptyContact(int index);
-
-private:
-	Contact contactArray[MAX];
+		void showMenu(void);
+		void addContact(int index, Contact new_contact);
+		void showContact(void);
+		void exit(void);
+		int emptyContact(int index);
+	
+	private:
+		Contact contactArray[MAX];
 };
 
 #endif
