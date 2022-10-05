@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:59 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/04 11:06:44 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/05 12:02:04 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ std::string get_input(std::string const message){
     std::string input;
     std::cout << message;
     std::getline(std::cin, input);
-    while (input.empty())
-    {
+    while (input.empty()){
         std::cout << "You should enter something:";
         std::getline(std::cin, input);
     }

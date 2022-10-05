@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:41:06 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/04 11:06:22 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/05 16:19:07 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <climits>
 #include <iomanip>
 #include "Contact.hpp"
 
@@ -27,7 +28,8 @@ class PhoneBook{
 
 		void showMenu(void);
 		void addContact(int index, Contact new_contact);
-		void showContact(void);
+		void showAllcontact(void);
+		void showSearchcontact(int index);
 		void exit(void);
 		int emptyContact(int index);
 	
