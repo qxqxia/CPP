@@ -6,12 +6,12 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:59 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/05 12:02:04 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/06 11:50:48 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <string> //string et getline
+#include <string> 
 #include <cstdlib>
 #include <iostream>
 
@@ -22,6 +22,10 @@ std::string get_input(std::string const message){
     std::string input;
     std::cout << message;
     std::getline(std::cin, input);
+    if (std::cin.eof()){
+        std::cout << "\nERROR:end of file\n";
+        return (input);
+    } //end of file;
     while (input.empty()){
         std::cout << "You should enter something:";
         std::getline(std::cin, input);

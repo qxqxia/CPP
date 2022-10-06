@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:41 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/05 16:22:18 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/06 11:55:05 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ int searchContact(PhoneBook mybook){
 }
 
 int main(void){
-    PhoneBook mybook; // creat phonebook
-    int index = 0;  // index of each contact
+    PhoneBook mybook; 
+    int index = 0;
     std::string input;
 
     while (1)
@@ -128,7 +128,7 @@ int main(void){
             if (index == 8)
                 index = 0;
             Contact new_contact;
-            if (new_contact.creat_new_contact() == 1) //why
+            if (new_contact.creat_new_contact() == 1) //eof
                 break;
             mybook.addContact(index, new_contact);
             index++;

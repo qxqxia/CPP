@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:44:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/04 11:06:33 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/06 11:33:11 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <string> //string et getline
+#include <string> 
 #include <cstdlib>
-//#include <iomapip>
 
 class Contact{
 	public:
@@ -42,7 +41,7 @@ class Contact{
 		{
 			this->secret = secret;
 		}
-		std::string get_first_name(void) const // cannot change when read
+		std::string get_first_name(void) const
 		{
 			return (this->first_name);
 		}
