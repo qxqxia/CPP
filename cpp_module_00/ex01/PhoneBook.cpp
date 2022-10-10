@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:41 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/06 11:55:05 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/10 12:31:01 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,16 @@ std::string check_str(std::string str){
 }
 
 void PhoneBook::showAllcontact(void){
-    std::cout << std::setw(10) << "index"
-              << " | " << std::setw(10) << "first name"
-              << " | " << std::setw(10) << "last name"
-              << " | " << std::setw(10) << "nickname" << std::endl;
+    std::cout << "|----------|----------|----------|----------|" << std::endl;
+    std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+    std::cout << "|----------|----------|----------|----------|" << std::endl;
     for (int index = 0; index < 8; index++)
     {
-        std::cout << std::setw(10) << "index"
-                  << " | " << std::setw(10) << check_str(this->contactArray[index].get_first_name().substr(0, 10))
-                  << " | " << std::setw(10) << check_str(this->contactArray[index].get_last_name().substr(0, 10))
-                  << " | " << std::setw(10) << check_str(this->contactArray[index].get_nickname().substr(0, 10)) << std::endl;
+        std::cout << "|" << std::setw(10) << index
+                  << "|" << std::setw(10) << check_str(this->contactArray[index].get_first_name().substr(0, 10))
+                  << "|" << std::setw(10) << check_str(this->contactArray[index].get_last_name().substr(0, 10))
+                  << "|" << std::setw(10) << check_str(this->contactArray[index].get_nickname().substr(0, 10)) << "|" << std::endl;
+        std::cout << "|----------|----------|----------|----------|" << std::endl;
     }
     return;
 }
@@ -101,6 +101,8 @@ int searchContact(PhoneBook mybook){
         mybook.showAllcontact();
         std::cout << "Please enter the index:";
         std::getline(std::cin, input);
+        if (std::cin.eof())
+            return (1);
         if (input.empty())
             return (0);
         search_index = check_num(input);
