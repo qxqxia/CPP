@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 14:23:18 by qxia              #+#    #+#              #
-#    Updated: 2022/10/07 14:26:02 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/10 14:48:18 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := Zombie
+NAME := HUMAN
 
 SRCS := main.cpp \
 		HumanA.cpp \
