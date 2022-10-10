@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 15:26:45 by qxia              #+#    #+#              #
-#    Updated: 2022/10/07 15:26:48 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/10 16:04:10 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := STRING
+NAME := REPLACE
 
 SRCS := main.cpp \
 
