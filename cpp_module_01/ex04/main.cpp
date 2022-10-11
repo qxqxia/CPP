@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:21:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/11 11:33:03 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/11 11:51:29 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,19 @@ int main(int ac, char **av){
     std::string s1 = av[2]; 
     std::string s2 = av[3]; 
     
-    std::ifstream infile;//open filename by reading
-    infile.open(filename) 
-    if (!filename){
+    std::ifstream ifs(filename);//open filename by reading
+    if (!ifs){
         std::cout << "open [" << filename << "] failed !" << std::endl;
         return (1);
     }
-    std::ofstream outfile;//open replacefile by writing
-    outfile.open(replacefile) 
-    if (!replacefile){
+    std::ofstream ofs(replacefile);//open replacefile by writing 
+    if (!ofs){
         std::cout << "open [" << replacefile << "] failed !" << std::endl;
         return (1);
     }
     
     //std::string::find
-    std::string cottents;
+    std::string contents;
     std::size_t pos;
     while(1){
         
