@@ -6,17 +6,13 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:21:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/11 10:08:44 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/11 11:33:03 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream> //open et close
 #include <string>
-
-int ft_replace(std::string s1, std::string s2, std::fstream &fs, std::string filename){
-        
-}
 
 int main(int ac, char **av){
     if (ac != 4){
@@ -25,19 +21,28 @@ int main(int ac, char **av){
     } 
     std::string filename = av[1];
     std::string replacefile = filename + ".replace";
-    std::fstream fs;
-    fs.open (av[1], std::fstream::in);
-    if (fs.is_open()){
-        std::string s1 = av[2]; //s1 not define
-        std::string s2 = av[3]; //s2 not define
-        //if (ft_replace(s1, s2, fs, filename))
-            //return ERROR?;
-    }
-    else{
+    std::string s1 = av[2]; 
+    std::string s2 = av[3]; 
+    
+    std::ifstream infile;//open filename by reading
+    infile.open(filename) 
+    if (!filename){
         std::cout << "open [" << filename << "] failed !" << std::endl;
         return (1);
-    };
+    }
+    std::ofstream outfile;//open replacefile by writing
+    outfile.open(replacefile) 
+    if (!replacefile){
+        std::cout << "open [" << replacefile << "] failed !" << std::endl;
+        return (1);
+    }
+    
+    //std::string::find
+    std::string cottents;
+    std::size_t pos;
+    while(1){
+        
+    }
     return (0);    
-    //fs.close();
 }
 
