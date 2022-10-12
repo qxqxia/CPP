@@ -6,15 +6,20 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:44:07 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/12 12:52:12 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/12 14:52:14 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 int main(int ac, char **av){
+    if (ac != 2){
+        std::cout << "wrong arguments\n";
+        return (1);
+    }
+    
     Harl Myharl;
-
     
-    
+    Myharl.complain(av[1]);
+    return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:44:48 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/12 12:55:16 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/12 14:55:22 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class Harl{
     private:
         void debug(void);
         void info(void);
-        void warninng(void);
+        void warning(void);
         void error(void);
+        void (Harl::*ft_pointer[4])(void);
 };
 
 #endif
