@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:21:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/11 11:51:29 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/12 11:48:14 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,28 @@ int main(int ac, char **av){
     }
     
     //std::string::find
-    std::string contents;
-    std::size_t pos;
+    std::string strings;
+    std::size_t found;
     while(1){
-        
+        std::getline(ifs, strings);
+        while(1){
+            found = strings.find(s1); //find s1
+            if (found != std::string::npos){//If no matches were found, the function returns string::npos.
+                strings.erase(found, s1.size());//delete s1
+                strings.insert(found, s2); //add s2
+            } 
+            else{
+                ofs << strings; //write strings in the filename to replacefile
+                break;
+            }
+        }
+        if (ifs.eof()) //why
+            break;
+        else
+            ofs << std::endl; //why
     }
+    ifs.close();
+    ofs.close();
     return (0);    
 }
 
