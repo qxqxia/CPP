@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:41 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/10 12:31:01 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/14 12:12:45 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,20 @@ std::string check_str(std::string str){
 }
 
 void PhoneBook::showAllcontact(void){
-    std::cout << "|----------|----------|----------|----------|" << std::endl;
+    if (this->contactArray[0].get_first_name() == "")//why
+		return ;
+    std::cout << "+----------+----------+----------+----------+" << std::endl;
     std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-    std::cout << "|----------|----------|----------|----------|" << std::endl;
+    std::cout << "+----------+----------+----------+----------+" << std::endl;
     for (int index = 0; index < 8; index++)
     {
+        if (this->contactArray[index].get_first_name() == "") //why
+			break ;
         std::cout << "|" << std::setw(10) << index
                   << "|" << std::setw(10) << check_str(this->contactArray[index].get_first_name().substr(0, 10))
                   << "|" << std::setw(10) << check_str(this->contactArray[index].get_last_name().substr(0, 10))
                   << "|" << std::setw(10) << check_str(this->contactArray[index].get_nickname().substr(0, 10)) << "|" << std::endl;
-        std::cout << "|----------|----------|----------|----------|" << std::endl;
+        std::cout << "+----------+----------+----------+----------+" << std::endl;
     }
     return;
 }
@@ -64,6 +68,7 @@ void PhoneBook::showAllcontact(void){
 void PhoneBook::showSearchcontact(int index){
     if (index > 7 || this->contactArray[index].get_first_name() == "")
         return ;
+    std::cout << "Index: " << index << std::endl;
     std::cout << "First name: " << this->contactArray[index].get_first_name() << std::endl;
     std::cout << "Last name: " << this->contactArray[index].get_last_name() << std::endl;
     std::cout << "Nick name: " << this->contactArray[index].get_nickname() << std::endl;
@@ -98,20 +103,20 @@ int searchContact(PhoneBook mybook){
     if (mybook.emptyContact(0))
         std::cout << "The phonebook is empty.\n";
     else{
-        mybook.showAllcontact();
-        std::cout << "Please enter the index:";
-        std::getline(std::cin, input);
-        if (std::cin.eof())
-            return (1);
-        if (input.empty())
-            return (0);
-        search_index = check_num(input);
-        if (search_index < 0 || search_index > 7)
-            std::cout << "Invalid index\n";
-        //else if (mybook.emptyContact(search_index)) //why
-            //std::cout <<
-        else
-            mybook.showSearchcontact(search_index); 
+            mybook.showAllcontact();
+            std::cout << "Please enter the index:";
+            std::getline(std::cin, input);
+            if (std::cin.eof())
+                return (1);
+            if (input.empty())
+                return (0);
+            search_index = check_num(input);
+            if (search_index < 0 || search_index > 7)
+                std::cout << "Invalid index\n";
+            else if (mybook.emptyContact(search_index)) //why
+                std::cout << search_index << " not found.\n";
+            else
+                mybook.showSearchcontact(search_index); 
     }
     return (0);
 }
@@ -121,10 +126,12 @@ int main(void){
     int index = 0;
     std::string input;
 
-    while (1)
+    while (input != "EXIT")
     {
         mybook.showMenu();
         std::getline(std::cin, input);
+        if (std::cin.eof()) //forget
+			break ;
         if (input == "ADD")
         {
             if (index == 8)
@@ -139,12 +146,7 @@ int main(void){
             if (searchContact(mybook) == 1) //why
                 break;
         }
-        else if (input == "EXIT"){
-            mybook.exit();
-        }
-        else{
-            std::cout << "*input not found*" << std::endl;
-        }
     }
+    std::cout << "EXIT\n";
     return (0);
 }

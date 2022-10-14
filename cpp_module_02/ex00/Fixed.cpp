@@ -3,11 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:25:51 by qinxia            #+#    #+#             */
-/*   Updated: 2022/10/12 22:45:39 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/10/13 16:14:54 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int const Fixed::bits = 8;
+
+Fixed::Fixed(void):value(0){
+    std::cout << "Default constructor called\n";
+    return ;
+}
+
+Fixed::~Fixed(void){
+    std::cout << "Destructor called\n";
+    return ;
+}
+
+Fixed::Fixed(Fixed const &src){
+    std::cout << "Copy constrcutor called\n";
+    *this = src;
+    return ;
+}
+
+Fixed& Fixed::operator=(Fixed const &rhs){
+    std::cout << "Copy assignment operator called\n";
+    this->value = rhs.getRawBits();
+    return *this;
+}
+
+void Fixed::setRawBits(int const raw){
+    this->value = raw;
+    return ;
+}
+
+int Fixed::getRawBits(void)const{
+    std::cout << "getRawBits member function called\n";
+    return this->value;
+}
+
