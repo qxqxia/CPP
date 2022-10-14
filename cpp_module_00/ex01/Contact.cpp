@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:59 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/14 12:11:30 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/14 14:32:24 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ std::string get_input(std::string const message){
     if (std::cin.eof()){
         std::cout << "\nERROR:end of file\n";
         return (input);
-    } //end of file;
+    }
     while (input.empty()){
         std::cout << "You should enter something:";
         std::getline(std::cin, input);
-        if (std::cin.eof()) //why
+        if (std::cin.eof())
 			return "";
     }
     return (input);

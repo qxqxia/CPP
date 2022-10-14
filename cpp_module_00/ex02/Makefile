@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+         #
+#    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 16:34:04 by qxia              #+#    #+#              #
-#    Updated: 2022/10/03 22:11:20 by qinxia           ###   ########.fr        #
+#    Updated: 2022/10/14 13:43:33 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC	= clang++
+CC	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
@@ -20,6 +20,9 @@ SRCS	:= Account.cpp \
 		tests.cpp \
 
 OBJS	:= $(SRCS:%.cpp=%.o)
+
+%.o : %.cpp
+	$(CC) $(CFLAGS) $< -c 
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@

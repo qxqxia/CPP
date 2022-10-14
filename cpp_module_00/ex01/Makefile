@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+         #
+#    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/08 12:20:32 by qxia              #+#    #+#              #
-#    Updated: 2022/10/03 21:56:16 by qinxia           ###   ########.fr        #
+#    Updated: 2022/10/14 13:40:53 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC	= clang++
+CC	= c++
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
@@ -20,6 +20,9 @@ SRCS	:= Contact.cpp \
 		PhoneBook.cpp \
 
 OBJS	:= $(SRCS:%.cpp=%.o)
+
+%.o : %.cpp
+	$(CC) $(CFLAGS) $< -c 
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@

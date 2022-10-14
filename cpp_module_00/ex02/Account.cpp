@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:33:58 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/04 15:52:20 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/14 13:51:02 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void    Account::makeDeposit(int deposit){
     this->_amount += deposit;
     _totalAmount += deposit;
     _totalNbDeposits ++;
-    this->_nbDeposits;
+    this->_nbDeposits = 0;
 
     Account::_displayTimestamp();
     std::cout << "index:" << this->_accountIndex << ";" \
