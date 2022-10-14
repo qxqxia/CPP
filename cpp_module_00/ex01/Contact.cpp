@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:47:59 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/14 14:32:24 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/14 14:37:33 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 #include <cstdlib>
 #include <iostream>
 
-Contact::Contact(void) {}
-Contact::~Contact(void) {}
+Contact::Contact(void) {
+    return ;
+}
+Contact::~Contact(void) {
+    return ;
+}
 
 std::string get_input(std::string const message){
     std::string input;
