@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:23:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/10 14:30:35 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/14 15:17:02 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "HumanB.hpp"
 
 #include <iostream>
+#include <fstream>
 
 int main(){
     {

@@ -6,11 +6,11 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 15:26:45 by qxia              #+#    #+#              #
-#    Updated: 2022/10/10 16:04:10 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/14 15:12:56 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -19,6 +19,9 @@ NAME := REPLACE
 SRCS := main.cpp \
 
 OBJS := $(SRCS:%.cpp=%.o)
+
+%.o : %.cpp
+		$(CC) $(CFLAGS) $< -c
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@

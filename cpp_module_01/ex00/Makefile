@@ -6,11 +6,11 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 10:42:53 by qxia              #+#    #+#              #
-#    Updated: 2022/10/06 15:16:32 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/14 15:11:51 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -22,6 +22,9 @@ SRCS := main.cpp \
 		Zombie.cpp \
 
 OBJS := $(SRCS:%.cpp=%.o)
+
+%.o : %.cpp
+		$(CC) $(CFLAGS) $< -c
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
