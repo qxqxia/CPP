@@ -1,24 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 22:31:13 by qinxia            #+#    #+#             */
-/*   Updated: 2022/10/16 14:56:07 by qxia             ###   ########.fr       */
+/*   Created: 2022/10/16 11:17:26 by qxia              #+#    #+#             */
+/*   Updated: 2022/10/16 11:33:24 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main(){
-    Harl Myharl;
-
-    Myharl.complain("DEBUG");
-    Myharl.complain("INFO");
-    Myharl.complain("WARNING");
-    Myharl.complain("ERROR");
-
-    return (0);
-}

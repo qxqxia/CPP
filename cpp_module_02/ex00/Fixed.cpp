@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:25:51 by qinxia            #+#    #+#             */
-/*   Updated: 2022/10/13 16:14:54 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/16 14:32:03 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,12 @@ Fixed& Fixed::operator=(Fixed const &rhs){
     return *this;
 }
 
-void Fixed::setRawBits(int const raw){
-    this->value = raw;
-    return ;
-}
-
 int Fixed::getRawBits(void)const{
     std::cout << "getRawBits member function called\n";
     return this->value;
 }
 
+void Fixed::setRawBits(int const raw){
+    this->value = raw;
+    return ;
+}

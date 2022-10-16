@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:21:45 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/14 15:36:31 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/16 14:55:08 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main(int ac, char **av){
         std::getline(ifs, strings);
         while(1){
             found = strings.find(s1); //find s1
-            if (found != std::string::npos){//If no matches were found, the function returns string::npos.
+            if (found != std::string::npos){//if no matches were found, the function returns string::npos.
                 strings.erase(found, s1.size());//delete s1
                 strings.insert(found, s2); //add s2
             } 
@@ -53,10 +53,10 @@ int main(int ac, char **av){
                 break;
             }
         }
-        if (ifs.eof()) //why
+        if (ifs.eof())
             break;
         else
-            ofs << std::endl; //why
+            ofs << std::endl;
     }
     ifs.close();
     ofs.close();
