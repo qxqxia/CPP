@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:46:37 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/12 15:13:48 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/17 11:44:49 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,13 @@ void Harl::complain(std::string level){
         i++;
     switch(i){
         case 0:
-            (this->*ft_pointer[i])();
-            break;
+            (this->*ft_pointer[i++])();
         case 1:
-            (this->*ft_pointer[i])();
-            break;
+            (this->*ft_pointer[i++])();
         case 2:
-            (this->*ft_pointer[i])();
-            break;
+            (this->*ft_pointer[i++])();
         case 3:
-            (this->*ft_pointer[i])();
-            break;
+            (this->*ft_pointer[i++])();
         default:
             std::cout << "[ Probably complaining about insignificant problems ]\n";
             break;

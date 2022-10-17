@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/16 13:13:00 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/17 13:48:35 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,21 @@
 class Fixed{
     public:
         Fixed(void);
-        Fixed(const int i);
-        Fixed(const float f);
-        Fixed(Fixed const &src);
+        Fixed(const int i); //overload
+        Fixed(const float f); //oveload
+        Fixed(Fixed const &src); //copy constructor
         ~Fixed(void);
-        Fixed& operator=(Fixed const &rhs);
+        Fixed& operator=(Fixed const &rhs); //copy assignment operator overload
         float toFloat( void ) const;
         int toInt( void ) const;
-        void setRawBits(int const raw);
         int getRawBits( void ) const;
+        void setRawBits(int const raw);
+        
     private:
         int value;
         const static int bits;  
 };
 
-std::ostream& operator << (std::ostream &o, Fixed const &rhs); 
+std::ostream& operator << (std::ostream &o, Fixed const &in); 
 
 #endif
