@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:42:38 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/17 17:16:06 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/17 17:52:30 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,30 @@ int Fixed::toInt( void ) const{
     return (this->getRawBits() / (1 << Fixed::bits));   
 }
 
-Fixed &Fixed::operator++(){
-    value ++;
+//operations d'incre et decrementation
+Fixed &Fixed::operator++(){ // this->value ++ pas value++
+    this->value ++;
     return *this;
 }
 
 Fixed Fixed::operator++(int){
-    Fixed tmp(*this); //create un object temporaire
+    Fixed temp = *this; //create un object temporaire
     value ++;
     return temp;
+}
+
+Fixed &Fixed::operator--(){ // this->value ++ pas value++
+    this->value --;
+    return *this;
+}
+
+Fixed Fixed::operator--(int){
+    Fixed temp = *this; //create un object temporaire
+    value --;
+    return temp;
+}
+
+std::ostream& operator << (std::ostream &os, Fixed const &obj){
+    os << obj.toFloat();
+    return os;
 }

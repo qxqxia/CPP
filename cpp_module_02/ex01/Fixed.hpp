@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/17 13:48:35 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/17 17:19:25 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ class Fixed{
         const static int bits;  
 };
 
-std::ostream& operator << (std::ostream &o, Fixed const &in); 
+std::ostream& operator << (std::ostream &os, Fixed const &obj); 
 
 #endif

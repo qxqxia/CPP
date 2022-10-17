@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:26 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/17 15:10:29 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/17 17:19:50 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int Fixed::toInt( void ) const{
     return (this->getRawBits() / (1 << Fixed::bits));   
 }
 
-std::ostream& operator << (std::ostream &o, Fixed const &in){
-    o << in.toFloat();
-    return o;
+std::ostream& operator << (std::ostream &os, Fixed const &obj){
+    os << obj.toFloat();
+    return os;
 }
