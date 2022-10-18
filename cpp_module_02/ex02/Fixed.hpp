@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:42:46 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 16:35:25 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:23:47 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Fixed{
         Fixed(const float f);
         Fixed(Fixed const &src); //cope
         ~Fixed(void);
+        
         Fixed& operator=(Fixed const &rhs); //operator overload copy assignment
        
         bool operator>(Fixed const &rhs)const;

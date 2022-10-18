@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/17 17:19:25 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:23:56 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class Fixed{
         Fixed(const float f); //oveload
         Fixed(Fixed const &src); //copy constructor
         ~Fixed(void);
+        
         Fixed& operator=(Fixed const &rhs); //copy assignment operator overload
+        
         float toFloat( void ) const;
         int toInt( void ) const;
         int getRawBits( void ) const;

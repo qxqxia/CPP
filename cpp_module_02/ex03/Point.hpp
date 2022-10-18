@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:03:52 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 17:08:24 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:23:37 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ class Point{
         Point(Fixed const x, Fixed const y);
         Point(Point const &src);
         ~Point(void);
+        
         Point& operator=(Point const &rhs);
+        
         Fixed getX(void) const;
         Fixed getY(void) const;
     private:

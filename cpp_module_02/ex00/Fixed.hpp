@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:25:46 by qinxia            #+#    #+#             */
-/*   Updated: 2022/10/18 10:45:01 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:24:04 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ class Fixed{
         Fixed(void);
         Fixed(Fixed const &src); //function overload
         ~Fixed(void);
+        
         Fixed& operator=(Fixed const &rhs);
+        
         void setRawBits(int const raw);
         int getRawBits( void ) const;
     private:
