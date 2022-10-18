@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:42:46 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/17 17:20:03 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/18 16:35:25 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed{
     public:
@@ -21,7 +22,8 @@ class Fixed{
         Fixed(const int i); //function overloading
         Fixed(const float f);
         Fixed(Fixed const &src); //cope
-        Fixed& operator=(Fixed const &rhs)const; //operator overload copy assignment
+        ~Fixed(void);
+        Fixed& operator=(Fixed const &rhs); //operator overload copy assignment
        
         bool operator>(Fixed const &rhs)const;
         bool operator<(Fixed const &rhs)const;
@@ -40,8 +42,8 @@ class Fixed{
         Fixed& operator--();
         Fixed operator--(int);
         
-        static Fixed& min(Fixed& num1, Fixed& num2);
-        const static Fixed& min(const Fixed& num1, const Fixed& num2);
+        static Fixed& min(Fixed& num1, Fixed& num2);//global variable/function
+        const static Fixed& min(const Fixed& num1, const Fixed& num2);//don't have this
         static Fixed& max(Fixed& num1, Fixed& num2);
         const static Fixed& max(const Fixed& num1, const Fixed& num2);
         
@@ -49,7 +51,7 @@ class Fixed{
         int toInt( void ) const;
         int getRawBits( void ) const;
         void setRawBits(int const raw);
-        ~Fixed(void);
+        
     private:
         int value;
         const static int bits;
