@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:03:43 by qxia              #+#    #+#              #
-#    Updated: 2022/10/18 15:07:23 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/19 16:15:05 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := BSP
+NAME := Fixed
 
 SRCS := main.cpp \
 		Fixed.cpp \

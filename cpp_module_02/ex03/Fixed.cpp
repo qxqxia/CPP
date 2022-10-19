@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:42:38 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 15:01:45 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/19 14:42:13 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ Fixed Fixed::operator-(Fixed const &rhs)const{
     return Fixed(this->value - rhs.getRawBits());
 }
 
-Fixed Fixed::operator*(Fixed const &rhs)const{ //why toFloat
+Fixed Fixed::operator*(Fixed const &rhs)const{
     return Fixed(this->toFloat() * rhs.toFloat());
 }
 
@@ -123,7 +123,7 @@ Fixed Fixed::operator/(Fixed const &rhs)const{
 }
 
 //min et max
-Fixed& Fixed::min(Fixed& num1, Fixed& num2){ //what is the difference
+Fixed& Fixed::min(Fixed& num1, Fixed& num2){
     return (num1.getRawBits() <= num2.getRawBits() ? num1 : num2);
 }
 

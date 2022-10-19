@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:03:47 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 17:17:42 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/19 16:05:45 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ Point::Point(Point const &src){
     return ;
 }
 
-Point& Point::operator=(Point const &rhs){ //change after
-    this = &rhs;
+Point& Point::operator=(Point const &rhs){
+    (Fixed)this->_x = (Fixed)rhs.getX();
+    (Fixed)this->_y = (Fixed)rhs.getY();
     return *this;
 }
 
