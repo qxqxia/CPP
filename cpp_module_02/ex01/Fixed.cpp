@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:26 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 11:52:56 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/21 12:21:34 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int Fixed::toInt( void ) const{
 }
 
 std::ostream& operator << (std::ostream &os, Fixed const &obj){
-    os << obj.toFloat(); //why toFloat
+    os << obj.toFloat(); 
     return os;
 }
