@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:03 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/21 12:09:19 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/21 16:53:53 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main( void ){
     Fixed const b( 10 );
     Fixed const c( 42.42f );
     Fixed const d( b );
-    a = Fixed(1234.7321f );
+    a = Fixed(1234.4321f );
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;

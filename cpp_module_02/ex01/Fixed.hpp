@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 11:17:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 17:23:56 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/21 16:53:21 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed{
     public:
         Fixed(void);
-        Fixed(const int i); //overload
-        Fixed(const float f); //oveload
+        Fixed(const int i); 
+        Fixed(const float f); 
         Fixed(Fixed const &src); //copy constructor
         ~Fixed(void);
         

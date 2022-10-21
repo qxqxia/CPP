@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:22 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/21 16:24:54 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/21 15:40:16 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ void ClapTrap::takeDamage(unsigned int amount){
     if (this->_attackdamage > 10)
         
     this->_hitpoints -= amount;
-    std::cout << "causing " << amount << " points of damage!\n";
+    std::cout << " causing " << amount << " points of damage!\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
     this->_hitpoints +=amount;
     this->_energypoints --;
-    std::cout << "ClapTrap " << this->_name << " regagne " << amount << " points.\n";
+    std::cout << "ClapTrap regagne " << amount << " points.\n";
 }
 
 ClapTrap::~ClapTrap(){
-    std::cout << "ClapTrap " << this->_name << " destructor called.\n";
+    std::cout << "ClapTrap destructor called.\n";
 }
 

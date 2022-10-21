@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:42:46 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/18 17:23:47 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/21 16:55:07 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Fixed{
         Fixed operator--(int);
         
         static Fixed& min(Fixed& num1, Fixed& num2);//global variable/function
-        const static Fixed& min(const Fixed& num1, const Fixed& num2);//don't have this
+        const static Fixed& min(const Fixed& num1, const Fixed& num2);
         static Fixed& max(Fixed& num1, Fixed& num2);
         const static Fixed& max(const Fixed& num1, const Fixed& num2);
         

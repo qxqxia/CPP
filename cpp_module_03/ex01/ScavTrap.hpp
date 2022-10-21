@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:18:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/21 16:22:21 by qxia             ###   ########.fr       */
+/*   Created: 2022/10/21 16:03:52 by qxia              #+#    #+#             */
+/*   Updated: 2022/10/21 16:15:25 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(){
-    ClapTrap A("qxia");
-    //ClapTrap B("Tom");
-    
+#include <iostream>
+#include <string>
 
-    A.attack("Tom");
-    A.takeDamage(11);
-    A.attack("Tom");
-    A.beRepaired(4);
-    return (0);
-}
+class ScavTrap: public ClapTrap
+{
+    public:
+        ScavTrap();
+        ~ScavTrap();
+
+        void guardGate();
+    private:
+        std::string _name;
+        int _Hitpoints;
+        int _Energypoints;
+        int _Attackdamage;
+};
