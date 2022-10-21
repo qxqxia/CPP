@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:03:24 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/20 13:34:16 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/21 10:51:46 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ bool bsp( Point const a, Point const b, Point const c, Point const point){
         return (true);
     return (false);
 }
+
