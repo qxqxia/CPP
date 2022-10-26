@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 16:03:52 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/26 15:19:58 by qxia             ###   ########.fr       */
+/*   Created: 2022/10/26 15:25:39 by qxia              #+#    #+#             */
+/*   Updated: 2022/10/26 16:15:50 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include <iostream>
 #include <string>
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
-{
+class FragTrap: public ClapTrap{
     public:
-        ScavTrap(void);
-        ScavTrap(std::string name);
-        ScavTrap(ScavTrap const &src);
-        ~ScavTrap(void);
-
-        ScavTrap& operator=(ScavTrap const &rhs);
+        FragTrap(void);
+        FragTrap(std::string name);
+        FragTrap(FragTrap const &src);
+        FragTrap& operator=(FragTrap const &rhs);
+        ~FragTrap(void);
 
         void attack(const std::string& target);
-        void guardGate();
+        void highFivesGuys(void);
+        
     private:
         std::string _name;
-        int _Hitpoints;
-        int _Energypoints;
-        int _Attackdamage;
+        int _hitpoints;
+        int _energypoints;
+        int _attackdamage;
 };
 
 #endif

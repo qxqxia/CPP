@@ -6,11 +6,12 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/21 15:37:07 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/26 16:26:47 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
     ClapTrap A("qxia");
@@ -22,4 +23,5 @@ int main(){
     A.attack(B.getName());
     A.beRepaired(4);
     return (0);
+    //need more tests
 }

@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 14:18:38 by qxia              #+#    #+#              #
-#    Updated: 2022/10/26 12:54:02 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/26 15:26:06 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME := ScavTrap
 SRCS := main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
+		FragTrap.cpp \
 
 OBJS := $(SRCS:%.cpp=%.o)
 

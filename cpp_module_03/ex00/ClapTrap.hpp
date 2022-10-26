@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:30 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/21 15:29:24 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/26 11:40:49 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 class ClapTrap{
     public:
-        ClapTrap();
+        ClapTrap(void);
         ClapTrap(std::string name);
         ClapTrap(ClapTrap const &src);
-        ~ClapTrap();
+        ~ClapTrap(void);
         
         ClapTrap& operator=(ClapTrap const &rhs);
         

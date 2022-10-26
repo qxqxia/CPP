@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/21 16:22:21 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/26 15:10:16 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(){
     
 
     A.attack("Tom");
-    A.takeDamage(11);
+    A.takeDamage(0);
     A.attack("Tom");
     A.beRepaired(4);
     return (0);

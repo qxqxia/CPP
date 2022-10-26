@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:37:10 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/26 16:22:59 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/26 16:22:39 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 //但是大部分基类都有 private 属性的成员变量，它们在派生类中无法访问，更不能使用派生类的构造函数来初始化。
 //解决思路：在派生类的构造函数中调用基类的构造函数。
 
-ScavTrap::ScavTrap(void):ClapTrap("unknown"){
+ScavTrap::ScavTrap(void):ClapTrap("NULL"){
     this->_Hitpoints = 100;
     this->_Energypoints = 50;
     this->_Attackdamage = 20;
