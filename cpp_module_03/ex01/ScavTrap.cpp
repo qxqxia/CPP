@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:37:10 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/26 16:22:59 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/27 14:53:19 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name){
     return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src){
+ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src){
     std::cout << "Copy ScavTrap constructor called.\n";
     *this = src;
     return ;

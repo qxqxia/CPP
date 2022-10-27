@@ -6,13 +6,13 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/26 16:21:32 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/27 16:09:19 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void):_name(0){
+FragTrap::FragTrap(void):ClapTrap(){
     this->_hitpoints = 100;
     this->_energypoints = 100;
     this->_attackdamage = 30;
@@ -20,7 +20,7 @@ FragTrap::FragTrap(void):_name(0){
     return ;
 }
 
-FragTrap::FragTrap(std::string name):_name(name){
+FragTrap::FragTrap(std::string name):ClapTrap(name){
     this->_hitpoints = 100;
     this->_energypoints = 100;
     this->_attackdamage = 30;
@@ -28,7 +28,7 @@ FragTrap::FragTrap(std::string name):_name(name){
     return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src){
+FragTrap::FragTrap(FragTrap const &src):ClapTrap(src){
     std::cout << "Copy FragTrap constructor called.\n";
     *this = src;
     return ;
@@ -49,7 +49,13 @@ FragTrap::~FragTrap(void){
 }
 
 void FragTrap::attack(const std::string& target){
-    
+    if (this->_energypoints <= 0)
+        std::cout << "Ooops! FragTrap has no more energy\n";
+    if (this->_hitpoints <= 0)
+        std::cout << "Ooops! FragTrap has no breathe.\n";
+    this->_energypoints --;
+    std::cout << "FragTrap " << this->_name << " attacks " << target << std::endl;
+    return ;
 }
 
 void FragTrap::highFivesGuys(void){

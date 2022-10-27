@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 14:18:38 by qxia              #+#    #+#              #
-#    Updated: 2022/10/26 15:26:06 by qxia             ###   ########.fr        #
+#    Updated: 2022/10/27 15:00:01 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := ScavTrap
+NAME := FragTrap
 
 SRCS := main.cpp \
 		ClapTrap.cpp \
