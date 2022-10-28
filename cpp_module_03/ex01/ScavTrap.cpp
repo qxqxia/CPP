@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:37:10 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/27 14:53:19 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 12:33:25 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 //但是大部分基类都有 private 属性的成员变量，它们在派生类中无法访问，更不能使用派生类的构造函数来初始化。
 //解决思路：在派生类的构造函数中调用基类的构造函数。
 
-ScavTrap::ScavTrap(void):ClapTrap("unknown"){
-    this->_Hitpoints = 100;
-    this->_Energypoints = 50;
-    this->_Attackdamage = 20;
+ScavTrap::ScavTrap(void):ClapTrap(){
+    this->_hitpoints = 100;
+    this->_energypoints = 50;
+    this->_attackdamage = 20;
     std::cout << "ScavTrap constructor called.\n";
     return ;
 }
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name){
-    this->_Hitpoints = 100;
-    this->_Energypoints = 50;
-    this->_Attackdamage = 20;
+    this->_hitpoints = 100;
+    this->_energypoints = 50;
+    this->_attackdamage = 20;
     std::cout << "ScavTrap " << name << " constructor called.\n";
     return ;
 }
@@ -42,9 +42,9 @@ ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src){
 ScavTrap& ScavTrap::operator=(ScavTrap const &rhs){
     std::cout << "ScavTrap: copy assignment operator called.\n";
     this->_name = rhs._name;
-    this->_Hitpoints = rhs._Hitpoints;
-    this->_Energypoints = rhs._Energypoints;
-    this->_Attackdamage = rhs._Attackdamage;
+    this->_hitpoints = rhs._hitpoints;
+    this->_energypoints = rhs._energypoints;
+    this->_attackdamage = rhs._attackdamage;
     return *this;
 }
 
@@ -54,17 +54,17 @@ ScavTrap::~ScavTrap(void){
 }
 
 void ScavTrap::attack(const std::string& target){
-    if (this->_Energypoints <= 0)
+    if (this->_energypoints <= 0)
         std::cout << "Ooops! ScavTrap has no more energy\n";
-    if (this->_Hitpoints <= 0)
+    if (this->_hitpoints <= 0)
         std::cout << "Ooops! ScavTrap has no breathe.\n";
-    this->_Energypoints --;
+    this->_energypoints --;
     std::cout << "ScavTrap " << this->_name << " attacks " << target;
     return ;
 }
 
 void ScavTrap::guardGate(){
-    if (this->_Hitpoints > 0){
+    if (this->_hitpoints > 0){
         std::cout << "ScavTrap is on mode Gate keeper.\n";
     }
     return ;
