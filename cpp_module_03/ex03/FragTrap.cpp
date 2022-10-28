@@ -6,13 +6,13 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/27 15:49:22 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 12:34:07 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void):_name(0){
+FragTrap::FragTrap(void):ClapTrap(){
     this->_hitpoints = 100;
     this->_energypoints = 100;
     this->_attackdamage = 30;
@@ -20,7 +20,7 @@ FragTrap::FragTrap(void):_name(0){
     return ;
 }
 
-FragTrap::FragTrap(std::string name):_name(name){
+FragTrap::FragTrap(std::string name):ClapTrap(name){
     this->_hitpoints = 100;
     this->_energypoints = 100;
     this->_attackdamage = 30;
@@ -62,5 +62,20 @@ void FragTrap::highFivesGuys(void){
     if (this->_hitpoints <= 0)
         std::cout << "Ooops! FragTrap has no breathe.\n";
     std::cout << "FragTrap: high fives please!\n";
+    return ;
+}
+
+void FragTrap::setHitpoints(void){
+    this->_hitpoints = 100;
+    return ;
+}
+
+void FragTrap::setEnergypoints(void){
+    this->_energypoints = 100;
+    return ;
+}
+
+void FragTrap::setAttackdamage(void){
+    this->_attackdamage = 30;
     return ;
 }

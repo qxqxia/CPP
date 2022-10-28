@@ -6,30 +6,31 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:05:12 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/27 16:37:18 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 12:25:26 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-//Virtual Inheritance
+//Virtual inheritance is a C++ technique that ensures only one copy of a base class's member variables are inherited by grandchild derived classes.
+//the diamond problem
 
 DiamondTrap::DiamondTrap(void):ScavTrap(), FragTrap(){
     this->_name = "unknown";
-    ClapTrap._name = "unknown_clap_name";
-    this->_hitpoints = FragTrap._hitpoints; //private attribut, get first
-    this->_energypoints = ScavTrap._Energypoints;
-    this->_attackdamage = FragTrap._attackdamage;
+    this->ClapTrap::_name = "unknown_clap_name";
+    FragTrap::setHitpoints();
+    ScavTrap::setEnergypoints();
+    FragTrap::setAttackdamage();
     std::cout << "DiamondTrap constructor called.\n";
     return ;
 }
 
 DiamondTrap::DiamondTrap(std::string name):ClapTrap(name), ScavTrap(name), FragTrap(name){
     this->_name = name;
-    ClapTrap._name = name + "_clap_name";
-    this->_hitpoints = FragTrap._hitpoints;
-    this->_energypoints = ScavTrap._Energypoints;
-    this->_attackdamage = FragTrap._attackdamage;
+    this->ClapTrap::_name = name + "_clap_name";
+    FragTrap::setHitpoints();
+    ScavTrap::setEnergypoints();
+    FragTrap::setAttackdamage();
     std::cout << "DiamondTrap " << this->_name << " constructor called.\n";
     return ;
 }
@@ -54,9 +55,16 @@ DiamondTrap::~DiamondTrap(void){
 }
 
 void DiamondTrap::attack(const std::string& target){
-    
+    if (this->_energypoints <= 0)
+        std::cout << "Ooops! DiamondTrap has no more energy\n";
+    if (this->_hitpoints <= 0)
+        std::cout << "Ooops! DiamondTrap has no breathe.\n";
+    this->_energypoints --;
+    std::cout << "DiamondTrap " << this->_name << " attacks " << target << std::endl;
+    return ;
 }
 
 void DiamondTrap::whoAmI(){
-    
+    std::cout << "The name of DiamondTrap is: " << this->_name << std::endl;
+    std::cout << "The name of ClapTrap is: " << this->ClapTrap::_name << std::endl;
 }
