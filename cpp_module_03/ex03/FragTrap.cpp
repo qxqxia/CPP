@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 12:34:07 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:30:28 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ FragTrap& FragTrap::operator=(FragTrap const &rhs){
 }
 
 FragTrap::~FragTrap(void){
-    std::cout << "FragTrap destructor called.\n";
+    std::cout << "FragTrap " << this->_name << " destructor called.\n";
     return ;
 }
 
@@ -54,14 +54,14 @@ void FragTrap::attack(const std::string& target){
     if (this->_hitpoints <= 0)
         std::cout << "Ooops! FragTrap has no breathe.\n";
     this->_energypoints --;
-    std::cout << "FragTrap " << this->_name << " attacks " << target << std::endl;
+    std::cout << "FragTrap " << this->_name << " attacks " << target << ", ";
     return ;
 }
 
 void FragTrap::highFivesGuys(void){
     if (this->_hitpoints <= 0)
         std::cout << "Ooops! FragTrap has no breathe.\n";
-    std::cout << "FragTrap: high fives please!\n";
+    std::cout << "FragTrap " << this->_name << ": high fives please!\n";
     return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:37:10 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 12:34:01 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:31:47 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap const &rhs){
 }
 
 ScavTrap::~ScavTrap(void){
-    std::cout << "ScavTrap destructor called.\n";
+    std::cout << "ScavTrap " << this->_name << " destructor called.\n";
     return ;
 }
 
@@ -59,13 +59,13 @@ void ScavTrap::attack(const std::string& target){
     if (this->_hitpoints <= 0)
         std::cout << "Ooops! ScavTrap has no breathe.\n";
     this->_energypoints --;
-    std::cout << "ScavTrap " << this->_name << " attacks " << target;
+    std::cout << "ScavTrap " << this->_name << " attacks " << target << ".\n";
     return ;
 }
 
 void ScavTrap::guardGate(){
     if (this->_hitpoints > 0){
-        std::cout << "ScavTrap is on mode Gate keeper.\n";
+        std::cout << "ScavTrap " << this->_name << " is on mode Gate keeper.\n";
     }
     return ;
 }

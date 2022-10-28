@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 12:32:05 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:27:15 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,15 @@
 #include "DiamondTrap.hpp"
 
 int main(){
-    DiamondTrap A("qxia");
-    ClapTrap B("Tom");
-    
+    DiamondTrap D("qxia");
 
-    DiamondTrap.
+    D.attack("Jerry");
+    D.whoAmI();
+    D.takeDamage(3);
+    D.beRepaired(5);
+    D.guardGate();
+    D.highFivesGuys();
+
+    return (0);
+
 }

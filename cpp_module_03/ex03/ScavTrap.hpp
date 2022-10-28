@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:03:52 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 12:19:52 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 12:56:24 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class ScavTrap: virtual public ClapTrap{
         void setHitpoints(void);
         void setEnergypoints(void);
         void setAttackdamage(void);
-    private:
         void guardGate();
  
 };

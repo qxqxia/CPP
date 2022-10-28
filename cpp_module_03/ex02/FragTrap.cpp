@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/27 16:09:19 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:31:08 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void FragTrap::attack(const std::string& target){
 void FragTrap::highFivesGuys(void){
     if (this->_hitpoints <= 0)
         std::cout << "Ooops! FragTrap has no breathe.\n";
-    std::cout << "FragTrap: high fives please!\n";
+    std::cout << "FragTrap " << this->_name << ": high fives please!\n";
     return ;
 }

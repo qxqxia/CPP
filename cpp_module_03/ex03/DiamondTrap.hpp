@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:04:04 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 11:55:32 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:46:26 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ class DiamondTrap: public ScavTrap, public FragTrap{
         DiamondTrap(void);
         DiamondTrap(std::string name);
         DiamondTrap(DiamondTrap const &src);
-        DiamondTrap& operator=(DiamondTrap const &rhs);
         ~DiamondTrap(void);
+        
+        DiamondTrap& operator=(DiamondTrap const &rhs);
 
         void attack(const std::string& target);
-        
-    private:
         void whoAmI();
+    private:
+        std::string _name;
 };
 
 #endif

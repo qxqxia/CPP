@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:03:52 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 11:51:23 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 12:56:04 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ class ScavTrap: public ClapTrap{
         ScavTrap& operator=(ScavTrap const &rhs);
 
         void attack(const std::string& target);
-        
-    private:
         void guardGate();
- 
 };
 
 #endif

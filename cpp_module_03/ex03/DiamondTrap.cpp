@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:05:12 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 12:25:26 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:02:09 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 //the diamond problem
 
 DiamondTrap::DiamondTrap(void):ScavTrap(), FragTrap(){
-    this->_name = "unknown";
-    this->ClapTrap::_name = "unknown_clap_name";
+    this->_name = "default";
+    this->ClapTrap::_name = "default_clap_name";
     FragTrap::setHitpoints();
     ScavTrap::setEnergypoints();
     FragTrap::setAttackdamage();
@@ -50,18 +50,12 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap const &rhs){
 }
 
 DiamondTrap::~DiamondTrap(void){
-    std::cout << "DiamondTrap destructor called.\n";
+    std::cout << "DiamondTrap " << this->_name << " destructor called.\n";
     return ;
 }
 
 void DiamondTrap::attack(const std::string& target){
-    if (this->_energypoints <= 0)
-        std::cout << "Ooops! DiamondTrap has no more energy\n";
-    if (this->_hitpoints <= 0)
-        std::cout << "Ooops! DiamondTrap has no breathe.\n";
-    this->_energypoints --;
-    std::cout << "DiamondTrap " << this->_name << " attacks " << target << std::endl;
-    return ;
+    ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI(){

@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:25:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 12:19:45 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:46:38 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ class FragTrap: virtual public ClapTrap{
         FragTrap(void);
         FragTrap(std::string name);
         FragTrap(FragTrap const &src);
-        FragTrap& operator=(FragTrap const &rhs);
         ~FragTrap(void);
+        
+        FragTrap& operator=(FragTrap const &rhs);
 
         void attack(const std::string& target);
         void setHitpoints(void);
         void setEnergypoints(void);
         void setAttackdamage(void);
-    private:
         void highFivesGuys(void);
 
 };

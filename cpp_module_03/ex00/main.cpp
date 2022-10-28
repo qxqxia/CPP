@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/26 15:10:16 by qxia             ###   ########.fr       */
+/*   Updated: 2022/10/28 16:42:30 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 int main(){
     ClapTrap A("qxia");
-    //ClapTrap B("Tom");
     
-
     A.attack("Tom");
-    A.takeDamage(0);
-    A.attack("Tom");
+    A.takeDamage(1);
     A.beRepaired(4);
     return (0);
 }
