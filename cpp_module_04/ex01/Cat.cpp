@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:35:20 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/01 11:11:36 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 15:47:29 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void) : Animal(){
     std::cout << "Cat constructor called.\n";
     this->_type = "Cat";
+    this->CatBrain
     return ;
 }
 

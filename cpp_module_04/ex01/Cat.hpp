@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:12:30 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/31 16:39:36 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 15:51:31 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Cat : public Animal{
 
         Cat& operator=(Cat const &rhs);
         void makeSound()const;
+        Brain* getBrain()const;
     private:
         Brain* CatBrain;
 };
