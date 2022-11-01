@@ -43,6 +43,8 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src):ClapTrap(src), ScavTrap(src), F
 
 DiamondTrap& DiamondTrap::operator=(DiamondTrap const &rhs){
     std::cout << "DiamondTrap: copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_name = rhs._name;
     this->_hitpoints = rhs._hitpoints;
     this->_attackdamage = rhs._attackdamage;

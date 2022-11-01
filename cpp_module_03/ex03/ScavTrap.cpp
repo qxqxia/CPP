@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:37:10 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 16:31:47 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:10:37 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src){
 
 ScavTrap& ScavTrap::operator=(ScavTrap const &rhs){
     std::cout << "ScavTrap: copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_name = rhs._name;
     this->_hitpoints = rhs._hitpoints;
     this->_energypoints = rhs._energypoints;

@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 16:31:08 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:09:59 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ FragTrap::FragTrap(FragTrap const &src):ClapTrap(src){
 
 FragTrap& FragTrap::operator=(FragTrap const &rhs){
     std::cout << "Fragtrap: copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_name = rhs._name;
     this->_hitpoints = rhs._hitpoints;
     this->_energypoints = rhs._energypoints;

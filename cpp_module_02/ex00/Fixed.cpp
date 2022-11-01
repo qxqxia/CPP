@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:25:51 by qinxia            #+#    #+#             */
-/*   Updated: 2022/10/18 10:45:07 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:07:55 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ Fixed::Fixed(Fixed const &src){
 
 Fixed& Fixed::operator=(Fixed const &rhs){
     std::cout << "Copy assignment operator called\n";
+    if (this == &rhs)
+        return *this;
     this->value = rhs.getRawBits();
     return *this;
 }

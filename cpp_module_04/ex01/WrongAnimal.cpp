@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:43:18 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/31 15:11:49 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:11:51 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ WrongAnimal::~WrongAnimal(void){
 
 WrongAnimal& WrongAnimal::operator=(WrongAnimal const &rhs){
     std::cout << "WrongAnimal: copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_type = rhs._type;
     return (*this);
 }

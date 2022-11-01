@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:35:20 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/31 16:08:11 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:10:52 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ Cat::~Cat(void){
 
 Cat& Cat::operator=(Cat const &rhs){
     std::cout << "Cat: copr assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_type = rhs._type;
     return (*this);
 }

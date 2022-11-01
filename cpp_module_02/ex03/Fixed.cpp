@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:42:38 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/19 14:42:13 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:14:22 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ Fixed::Fixed(Fixed const &src){
 }
 
 Fixed& Fixed::operator=(Fixed const &rhs){
+    if (this == &rhs)
+        return *this;
     this->value = rhs.getRawBits();
     return *this;
 }

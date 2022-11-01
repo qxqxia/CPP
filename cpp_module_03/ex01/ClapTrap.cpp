@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:18:22 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/28 16:20:41 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:09:28 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ ClapTrap::ClapTrap(ClapTrap const &src){
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &rhs){
     std::cout << "ClapTrap: Copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_name = rhs._name;
     this->_hitpoints = rhs._hitpoints;
     this->_energypoints = rhs._energypoints;

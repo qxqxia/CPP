@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:44:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/10/31 14:21:30 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/01 11:10:59 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Dog::Dog(Dog const &src) : Animal(src){
 
 Dog& Dog::operator=(Dog const &rhs){
     std::cout << "Dog: copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_type = rhs._type;
     return (*this);
 }
