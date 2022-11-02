@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 13:12:30 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:00:35 by qxia             ###   ########.fr       */
+/*   Created: 2022/10/31 14:43:36 by qxia              #+#    #+#             */
+/*   Updated: 2022/10/31 15:09:42 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal{
+class WrongCat : public WrongAnimal{
     public:
-        Cat(void);
-        Cat(Cat const &src);
-        ~Cat(void);
+        WrongCat(void);
+        WrongCat(WrongCat const &src);
+        ~WrongCat(void);
 
-        Cat &operator=(Cat const &rhs);
-        void makeSound() const;
-        Brain *getBrain() const;
-        void addIdea(std::string idea);
-        void printIdeas(void)const;
-    private:
-        Brain *CatBrain;
+        WrongCat& operator=(WrongCat const &rhs);
+
+        void makeSound()const;
 };
 
 #endif
