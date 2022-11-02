@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 11:29:22 by qxia              #+#    #+#              #
-#    Updated: 2022/11/02 14:50:22 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/02 16:00:12 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME := Brain
 
 SRCS := main.cpp \
 		Brain.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Cat.cpp \
 		Dog.cpp \
 

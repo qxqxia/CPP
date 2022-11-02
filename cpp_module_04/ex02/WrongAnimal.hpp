@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 16:25:29 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 14:03:14 by qxia             ###   ########.fr       */
+/*   Created: 2022/10/31 14:43:23 by qxia              #+#    #+#             */
+/*   Updated: 2022/10/31 15:32:12 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Brain{
+class WrongAnimal{
     public:
-        Brain(void);
-        Brain(Brain const &src);
-        ~Brain(void);
-
-        Brain& operator=(Brain const &rhs);
+        WrongAnimal(void);
+        WrongAnimal(WrongAnimal const &src);
+        virtual ~WrongAnimal(void); //must add virtual 
         
-        void addIdea(std::string ideas);
-        void printIdeas(void)const;
-        std::string ideas[100];
+        WrongAnimal& operator=(WrongAnimal const &rhs);
+        
+        std::string getType(void) const;
+        //if we don't declare virtual, function makesound in the base class will be called.
+        void makeSound()const;
+    protected:
+        std::string _type;
 };
 
 #endif

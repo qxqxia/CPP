@@ -6,13 +6,13 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:28:53 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:28:56 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/02 16:01:12 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -21,9 +21,9 @@
 int	main() {
 	
 	/*std::cout << "~~~~~~Subject test~~~~~~\n";
-	const Animal* test = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* test = new AAnimal();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 
 	std::cout << test->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
@@ -40,11 +40,11 @@ int	main() {
 	delete(test);
 	std::cout << std::endl;
 
-	std::cout << "~~~~~~Animal array~~~~~~\n";
+	std::cout << "~~~~~~AAnimal array~~~~~~\n";
 	std::cout << std::endl;
 
 	int	nbr = 4;
-	Animal* animals[nbr];
+	AAnimal* animals[nbr];
 
 	std::cout << "------create dogs and cats-------\n" <<  std::endl;
 	for (int i = 0; i < nbr; i++) {

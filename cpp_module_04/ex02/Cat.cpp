@@ -6,21 +6,21 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:35:20 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:23:03 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/02 15:58:44 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(void) : Animal(){
+Cat::Cat(void) : AAnimal(){
     std::cout << "Cat constructor called.\n";
     this->_type = "Cat";
     this->CatBrain = new Brain();
     return ;
 }
 
-Cat::Cat(Cat const &src) : Animal(src){ //deep copy
+Cat::Cat(Cat const &src) : AAnimal(src){ //deep copy
     std::cout << "Cat copy constructor called.\n";
     this->_type = src._type;
     this->CatBrain = new Brain();

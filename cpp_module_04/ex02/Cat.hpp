@@ -6,17 +6,17 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:12:30 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:00:35 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/02 15:59:31 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal{
+class Cat : public AAnimal{
     public:
         Cat(void);
         Cat(Cat const &src);

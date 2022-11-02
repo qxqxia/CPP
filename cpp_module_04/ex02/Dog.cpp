@@ -6,20 +6,20 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:44:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:22:54 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/02 15:59:49 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal(){
+Dog::Dog(void) : AAnimal(){
     std::cout << "Dog constructor called.\n";
     this->_type = "Dog";
     this->DogBrain = new Brain();
     return ;
 }
 
-Dog::Dog(Dog const &src) : Animal(src){
+Dog::Dog(Dog const &src) : AAnimal(src){
     std::cout << "Dog copy constructor called.\n";
     this->_type = src._type;
     this->DogBrain = new Brain();
