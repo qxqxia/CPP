@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:28:53 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 16:01:12 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 10:59:19 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@
 
 int	main() {
 	
-	/*std::cout << "~~~~~~Subject test~~~~~~\n";
-	const AAnimal* test = new AAnimal();
+	std::cout << "***Basic tests***\n";
+	//class abstraite cannot be instancied
+	//const AAnimal* meta = new AAnimal();
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 
-	std::cout << test->getType() << " " << std::endl;
+	//std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 
-	i->makeSound(); //will output the cat sound!
+	i->makeSound(); 
 	j->makeSound();
 
 	i->printIdeas();
@@ -37,42 +38,27 @@ int	main() {
 
 	delete(j);
 	delete(i);
-	delete(test);
+	//delete(meta);
 	std::cout << std::endl;
 
-	std::cout << "~~~~~~AAnimal array~~~~~~\n";
-	std::cout << std::endl;
-
-	int	nbr = 4;
-	AAnimal* animals[nbr];
-
-	std::cout << "------create dogs and cats-------\n" <<  std::endl;
-	for (int i = 0; i < nbr; i++) {
-		std::cout << i << std::endl;
-		if (i < (nbr / 2)) {
-			animals[i] = new Dog();
-		} else {
-			animals[i] = new Cat();
+	std::cout << "***AAnimal tableau***\n";
+	int	n = 6;
+	AAnimal* Aanimals[n];
+	for (int i = 0; i < n; i++) {
+		if (i < (n / 2)) {
+			Aanimals[i] = new Dog();
+		} 
+		else {
+			Aanimals[i] = new Cat();
 		}
 	}
 	std::cout << std::endl;
 
-	std::cout << "-------Dogs and cats making sound.-------\n" <<  std::endl;
-	for (int i = 0; i < nbr; i++) {
-		std::cout << "Animal type: " << \
-			animals[i]->getType() << " " << std::endl;
-		animals[i]->makeSound();
-		animals[i]->addIdea("idea1");
-		animals[i]->addIdea("idea2");
-		animals[i]->printIdeas();
+	std::cout << "***Delete tests***\n";
+	for (int i = 0; i < n; i++) {
+		delete Aanimals[i];
 	}
 	std::cout << std::endl;
-
-	std::cout << "-------Delete dogs and cats.-------\n";
-	for (int i = 0; i < nbr; i++) {
-		delete animals[i];
-	}
-	std::cout << std::endl;*/
 
 	std::cout << "***CAT deep copy tests***\n";
 	Cat cat1;
