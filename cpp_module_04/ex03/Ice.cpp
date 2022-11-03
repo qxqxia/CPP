@@ -3,39 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:13:18 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 16:40:14 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 22:52:01 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void) : AMateria("Ice"){
+Ice::Ice(void) : AMateria("Ice")
+{
     std::cout << "Ice constructor called.\n";
 }
 
-Ice::Ice(Ice const &src) : AMateria(src){
+Ice::Ice(Ice const &src) : AMateria(src)
+{
     std::cout << "Ice copy constructor called.\n";
     *this = src;
 }
 
-Ice::~Ice(void){
+Ice::~Ice(void)
+{
     std::cout << "Ice destructor called.\n";
 }
 
-Ice& Ice::operator=(Ice const  &rhs){
+Ice &Ice::operator=(Ice const &rhs)
+{
     std::cout << "Ice copy assignment operator called.\n";
+    if (this == &rhs)
+        return *this;
     this->_type = rhs._type;
     return (*this);
 }
 
-Ice* Ice::clone() const{
-    Ice* pIce = new Ice();
+Ice *Ice::clone() const
+{
+    Ice *pIce = new Ice();
     return (pIce);
 }
 
-void Ice::use(ICharacter& target){
+void Ice::use(ICharacter &target)
+{
     std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }

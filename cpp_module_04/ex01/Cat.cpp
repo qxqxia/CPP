@@ -3,65 +3,75 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:35:20 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:23:03 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 22:51:57 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(void) : Animal(){
+Cat::Cat(void) : Animal()
+{
     std::cout << "Cat constructor called.\n";
     this->_type = "Cat";
     this->CatBrain = new Brain();
-    return ;
+    return;
 }
 
-Cat::Cat(Cat const &src) : Animal(src){ //deep copy
+Cat::Cat(Cat const &src) : Animal(src)
+{
     std::cout << "Cat copy constructor called.\n";
     this->_type = src._type;
-    this->CatBrain = new Brain();
-    for(int i = 0; i < 100; i++){
+    this->CatBrain = new Brain(); // deep copy
+    for (int i = 0; i < 100; i++)
+    {
         this->CatBrain->ideas[i] = src.CatBrain->ideas[i];
     }
-    return ;
+    return;
 }
 
-Cat& Cat::operator=(Cat const &rhs){ //deep copy
+Cat &Cat::operator=(Cat const &rhs)
+{
     std::cout << "Cat copy assignment operator called.\n";
     if (this == &rhs)
         return *this;
     this->_type = rhs._type;
-    for(int i = 0; i < 100; i++){
+    for (int i = 0; i < 100; i++)
+    { // deep copy
         this->CatBrain->ideas[i] = rhs.CatBrain->ideas[i];
     }
     return (*this);
 }
 
-Cat::~Cat(void){
+Cat::~Cat(void)
+{
     std::cout << "Cat destructor called.\n";
     delete CatBrain;
-    return ;
+    return;
 }
 
-void Cat::makeSound()const{
+void Cat::makeSound() const
+{
     std::cout << this->_type << " makes no sound.\n";
-    return ;
+    return;
 }
 
-Brain* Cat::getBrain()const{
+Brain *Cat::getBrain() const
+{
     return (this->CatBrain);
 }
 
-void Cat::addIdea(std::string idea){
+void Cat::addIdea(std::string idea)
+{
     std::cout << "Add " << idea << "\n";
     this->CatBrain->addIdea(idea);
 }
 
-void Cat::printIdeas(void)const{
+void Cat::printIdeas(void) const
+{
     std::cout << "Print ideas of cat:\n";
     this->CatBrain->printIdeas();
 }
