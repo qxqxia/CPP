@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:28:53 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:28:56 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 10:52:45 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 
 int	main() {
 	
-	/*std::cout << "~~~~~~Subject test~~~~~~\n";
-	const Animal* test = new Animal();
+	std::cout << "***Basic tests***\n";
+	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	std::cout << test->getType() << " " << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 
-	i->makeSound(); //will output the cat sound!
+	i->makeSound(); 
 	j->makeSound();
 
 	i->printIdeas();
@@ -37,42 +37,27 @@ int	main() {
 
 	delete(j);
 	delete(i);
-	delete(test);
+	delete(meta);
 	std::cout << std::endl;
 
-	std::cout << "~~~~~~Animal array~~~~~~\n";
-	std::cout << std::endl;
-
-	int	nbr = 4;
-	Animal* animals[nbr];
-
-	std::cout << "------create dogs and cats-------\n" <<  std::endl;
-	for (int i = 0; i < nbr; i++) {
-		std::cout << i << std::endl;
-		if (i < (nbr / 2)) {
+	std::cout << "***Animal tableau***\n";
+	int	n = 6;
+	Animal* animals[n];
+	for (int i = 0; i < n; i++) {
+		if (i < (n / 2)) {
 			animals[i] = new Dog();
-		} else {
+		} 
+		else {
 			animals[i] = new Cat();
 		}
 	}
 	std::cout << std::endl;
 
-	std::cout << "-------Dogs and cats making sound.-------\n" <<  std::endl;
-	for (int i = 0; i < nbr; i++) {
-		std::cout << "Animal type: " << \
-			animals[i]->getType() << " " << std::endl;
-		animals[i]->makeSound();
-		animals[i]->addIdea("idea1");
-		animals[i]->addIdea("idea2");
-		animals[i]->printIdeas();
-	}
-	std::cout << std::endl;
-
-	std::cout << "-------Delete dogs and cats.-------\n";
-	for (int i = 0; i < nbr; i++) {
+	std::cout << "***Delete tests***\n";
+	for (int i = 0; i < n; i++) {
 		delete animals[i];
 	}
-	std::cout << std::endl;*/
+	std::cout << std::endl;
 
 	std::cout << "***CAT deep copy tests***\n";
 	Cat cat1;
