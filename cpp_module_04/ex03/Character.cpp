@@ -6,13 +6,14 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:13:57 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 15:51:35 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 16:41:37 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(void){
+    std::cout << "character constructor called.\n";
     
 }
         

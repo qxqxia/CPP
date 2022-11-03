@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:06:43 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 15:35:38 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 16:29:03 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ std::string const& AMateria::getType()const{
 }
 
 void AMateria::use(ICharacter& target){
+    (void)target;
     return ;
 }

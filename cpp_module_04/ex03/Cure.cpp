@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:13:13 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 15:42:56 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 16:39:58 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ Cure& Cure::operator=(Cure const  &rhs){
 }
 
 Cure* Cure::clone() const{
-    
+    Cure* pCure = new Cure(); //allocate a new memory
+    return (pCure);
 }
 
 void Cure::use(ICharacter& target){
-    
+    std::cout << "* heals " << target.getName() << "'s wounds *\n";
 }
