@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:40:00 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 16:14:43 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/03 17:21:06 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
+#define Maxitems 4
 //Object_interface
 //1. declarer une interface: ICharacter
 //2. Implementer cette interface par heritage
@@ -34,7 +35,7 @@ class Character : public ICharacter{
         void use(int idx, ICharacter& target);
     private:
         std::string _name;
-        AMateria* _inventaire[4];
+        AMateria* _inventaire[Maxitems];
 };
 
 #endif
