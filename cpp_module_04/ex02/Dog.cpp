@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:44:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/04 11:32:07 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/04 14:42:29 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ Dog::~Dog(void){
 Dog& Dog::operator=(Dog const &rhs){
     std::cout << "Dog copy assignment operator called.\n";
     if (this == &rhs)
-        return *this;
+        return (*this);
+    if (this->DogBrain)
+        delete (this->DogBrain);
     this->_type = rhs._type;
     this->DogBrain = new Brain();
     for(int i = 0; i < 100; i++){

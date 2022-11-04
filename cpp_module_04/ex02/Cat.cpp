@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:35:20 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/04 11:25:54 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/04 14:49:53 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ Cat::~Cat(void){
 Cat& Cat::operator=(Cat const &rhs){ //deep copy
     std::cout << "Cat copy assignment operator called.\n";
     if (this == &rhs)
-        return *this;
+        return (*this);
+    if (this->CatBrain)
+        delete (this->CatBrain);
     this->_type = rhs._type;
+    this->CatBrain = new Brain();
     for(int i = 0; i < 100; i++){
         this->CatBrain->ideas[i] = rhs.CatBrain->ideas[i];
     }
