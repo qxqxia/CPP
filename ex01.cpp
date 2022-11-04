@@ -1,6 +1,8 @@
 #include <iostream>
+#include <stdexcept>
+
 using namespace std;
-class A
+/*class A
 {
 public:
 	int a;
@@ -26,4 +28,9 @@ int main()
 	d.a = 5;
 	cout << d.a << endl;
 	return 0;
+}*/
+void test1(){
+	try{
+		if(
+	}
 }
