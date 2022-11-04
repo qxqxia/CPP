@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:43:18 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/01 11:11:51 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/04 11:25:09 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 WrongAnimal::WrongAnimal(void):_type("default"){
     std::cout << "WrongAnimal constructor called.\n";
-    return ;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &src){
     std::cout << "Copy WrongAnimal constructor called.\n";
     *this = src;
-    return ;
 }
 
 WrongAnimal::~WrongAnimal(void){
     std::cout << "WrongAnimal destructor called.\n";
-    return ;
 }
 
 WrongAnimal& WrongAnimal::operator=(WrongAnimal const &rhs){

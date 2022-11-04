@@ -14,18 +14,15 @@
 
 AAnimal::AAnimal(void):_type("default"){
     std::cout << "AAnimal constructor called.\n";
-    return ;
 }
 
 AAnimal::AAnimal(AAnimal const &src){
     std::cout << "AAnimal copy constructor called.\n";
     *this = src;
-    return ;
 }
 
 AAnimal::~AAnimal(void){
     std::cout << "AAnimal destructor called.\n";
-    return ;
 }
 
 AAnimal& AAnimal::operator=(AAnimal const &rhs){

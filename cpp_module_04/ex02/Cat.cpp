@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:35:20 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:58:44 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/04 11:25:54 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Cat::Cat(void) : AAnimal(){
     std::cout << "Cat constructor called.\n";
     this->_type = "Cat";
     this->CatBrain = new Brain();
-    return ;
 }
 
 Cat::Cat(Cat const &src) : AAnimal(src){ //deep copy
@@ -27,7 +26,11 @@ Cat::Cat(Cat const &src) : AAnimal(src){ //deep copy
     for(int i = 0; i < 100; i++){
         this->CatBrain->ideas[i] = src.CatBrain->ideas[i];
     }
-    return ;
+}
+
+Cat::~Cat(void){
+    std::cout << "Cat destructor called.\n";
+    delete CatBrain;
 }
 
 Cat& Cat::operator=(Cat const &rhs){ //deep copy
@@ -39,12 +42,6 @@ Cat& Cat::operator=(Cat const &rhs){ //deep copy
         this->CatBrain->ideas[i] = rhs.CatBrain->ideas[i];
     }
     return (*this);
-}
-
-Cat::~Cat(void){
-    std::cout << "Cat destructor called.\n";
-    delete CatBrain;
-    return ;
 }
 
 void Cat::makeSound()const{

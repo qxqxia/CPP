@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:43:37 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 22:52:07 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/04 13:47:10 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 
 #include "IMateriaSource.hpp"
 
+# define Maxnbr 4
+
 // Object_interface
-class MateriaSource : public IMateriaSource
-{
-public:
-    MateriaSource();
-    MateriaSource(MateriaSource const &src);
-    ~MateriaSource();
+class MateriaSource : public IMateriaSource{
+    public:
+        MateriaSource(void);
+        MateriaSource(MateriaSource const &src);
+        ~MateriaSource(void);
 
-    MateriaSource &operator=(MateriaSource const &rhs);
+        MateriaSource &operator=(MateriaSource const &rhs);
 
-    void learnMateria(AMateria *);
-    AMateria *createMateria(std::string const &type);
+        void learnMateria(AMateria *m);
+        AMateria *createMateria(std::string const &type);
 
-private:
-    AMateria *_source[4];
+    private:
+        AMateria *_source[Maxnbr];
 };
 
 #endif

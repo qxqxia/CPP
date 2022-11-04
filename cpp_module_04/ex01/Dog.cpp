@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:44:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:22:54 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/04 11:30:55 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Dog::Dog(void) : Animal(){
     std::cout << "Dog constructor called.\n";
     this->_type = "Dog";
     this->DogBrain = new Brain();
-    return ;
 }
 
 Dog::Dog(Dog const &src) : Animal(src){
@@ -26,7 +25,11 @@ Dog::Dog(Dog const &src) : Animal(src){
     for(int i = 0; i < 100; i++){
         this->DogBrain->ideas[i] = src.DogBrain->ideas[i];
     }
-    return ;
+}
+
+Dog::~Dog(void){
+    std::cout << "Dog destructor called.\n";
+    delete DogBrain;
 }
 
 Dog& Dog::operator=(Dog const &rhs){
@@ -39,12 +42,6 @@ Dog& Dog::operator=(Dog const &rhs){
         this->DogBrain->ideas[i] = rhs.DogBrain->ideas[i];
     }
     return (*this);
-}
-
-Dog::~Dog(void){
-    std::cout << "Dog destructor called.\n";
-    delete DogBrain;
-    return ;
 }
 
 void Dog::makeSound()const{

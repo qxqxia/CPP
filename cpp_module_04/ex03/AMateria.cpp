@@ -3,38 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:06:43 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/03 22:51:54 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/04 11:35:46 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(void)
-{
+AMateria::AMateria(void){
     std::cout << "AMateria constructor called.\n";
 }
 
-AMateria::AMateria(std::string const &type) : _type(type)
-{
+AMateria::AMateria(std::string const &type) : _type(type){
     std::cout << "AMateria " << this->_type << " constructor called.\n";
 }
 
-AMateria::AMateria(AMateria const &src)
-{
+AMateria::AMateria(AMateria const &src){
     std::cout << "AMateria copy constructor called.\n";
     *this = src;
 }
 
-AMateria::~AMateria(void)
-{
+AMateria::~AMateria(void){
     std::cout << "AMateria destructor called.\n";
 }
 
-AMateria &AMateria::operator=(AMateria const &rhs)
-{
+AMateria &AMateria::operator=(AMateria const &rhs){
     std::cout << "AMateria copy assignment operator called.\n";
     if (this == &rhs)
         return *this;
@@ -42,13 +37,11 @@ AMateria &AMateria::operator=(AMateria const &rhs)
     return (*this);
 }
 
-std::string const &AMateria::getType() const
-{
+std::string const &AMateria::getType() const{
     return (this->_type);
 }
 
-void AMateria::use(ICharacter &target)
-{
+void AMateria::use(ICharacter &target){
     (void)target;
-    return;
+    return ;
 }

@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 13:15:58 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/02 15:18:51 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/04 11:23:00 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 Animal::Animal(void):_type("default"){
     std::cout << "Animal constructor called.\n";
-    return ;
 }
 
 Animal::Animal(Animal const &src){
     std::cout << "Animal copy constructor called.\n";
     *this = src;
-    return ;
 }
 
 Animal::~Animal(void){
     std::cout << "Animal destructor called.\n";
-    return ;
 }
 
 Animal& Animal::operator=(Animal const &rhs){
