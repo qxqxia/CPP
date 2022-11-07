@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:54:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/07 12:08:20 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/07 16:26:29 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ class Bureaucrat{
         void increGrade(void);
         void decreGrade(void);
         
+        void signForm(Form const &f);
+        
     private:
-        const std::string _name;
-        unsigned int _grade;
+        const std::string   _name;
+        unsigned int        _grade;
 };
 
 std::ostream& operator << (std::ostream &os, Bureaucrat const &obj);

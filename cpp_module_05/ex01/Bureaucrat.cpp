@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:54:43 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/07 15:37:52 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/07 14:28:16 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,16 @@ unsigned int Bureaucrat::getGrade()const{
 }
         
 void Bureaucrat::increGrade(void){
-    if (this->_grade <= 1)
-        throw GradeTooHighException();
     this->_grade -= 1;
+    if (this->_grade < 1)
+        throw GradeTooHighException();
     std::cout << "The grade of " << this->_name << " is higher now: " << this->_grade << ".\n"; 
 }
         
 void Bureaucrat::decreGrade(void){
-    if (this->_grade >= 150)
-        throw GradeTooLowException();
     this->_grade += 1;
+    if (this->_grade > 150)
+        throw GradeTooLowException();
     std::cout << "The grade of " << this->_name << " is lower now: " << this->_grade << ".\n";
 }
 

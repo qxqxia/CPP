@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 15:56:35 by qxia              #+#    #+#              #
-#    Updated: 2022/11/07 11:55:45 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/07 15:25:10 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME := Bureaucrat
 
 SRCS := main.cpp \
 		Bureaucrat.cpp \
+		Form.cpp \
 
 OBJS := $(SRCS:%.cpp=%.o)
 
