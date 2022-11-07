@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:17:55 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/07 16:26:18 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/07 16:39:07 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Form{
     public:
         Form(void);
-        Form(std::string name, unsgned int SignGrade, unsigned int ExecGrade);
+        Form(std::string name, unsigned int SignGrade, unsigned int ExecGrade);
         Form(Form const &src);
         ~Form(void);
         

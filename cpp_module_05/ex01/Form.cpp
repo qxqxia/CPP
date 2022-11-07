@@ -6,17 +6,17 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/07 16:31:06 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/07 16:38:21 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void){
+Form::Form(void) : {
     
 }
 
-Form::Form(std::string name, unsgned int SignGrade, unsigned int ExecGrade){
+Form::Form(std::string name, unsigned int SignGrade, unsigned int ExecGrade){
     
 }
 
