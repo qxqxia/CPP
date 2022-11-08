@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 15:56:35 by qxia              #+#    #+#              #
-#    Updated: 2022/11/08 13:23:53 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/08 14:15:22 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,14 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := Form
+NAME := Robot
 
 SRCS := main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm \
 
 OBJS := $(SRCS:%.cpp=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:54:43 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/07 15:37:52 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/08 10:44:48 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ Bureaucrat::~Bureaucrat(void){
     std::cout << "Bureaucrat destructor called.\n";
 }
 
-Bureaucrat& Bureaucrat::operator=(Bureaucrat const &rhs){
+Bureaucrat& Bureaucrat::operator=(Bureaucrat const &rhs) : {
     std::cout << "Bureaucrat copy assignment operator called.\n";
     if (this == &rhs)
         return (*this);
     this->_grade = rhs._grade;
-    //name is constant, how to copy.
+    (std::string &)this->_name = rhs._name;//name is constant
     return (*this);
 }
         
