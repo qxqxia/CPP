@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/08 14:00:28 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/09 11:15:17 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ Form::Form(std::string name, unsigned int SignGrade, unsigned int ExecGrade) :
             _GradeforSigner(SignGrade), 
             _GradeforExec(ExecGrade){
                 std::cout << "Form avec parametres constructor called.\n";
+                if (SignGrade > 150 || ExecGrade > 150)
+                    throw GradeTooLowException();
+                if (SignGrade < 1 || ExecGrade < 1)
+                    throw GradeTooHighException();
 }
 
 Form::Form(Form const &src) :

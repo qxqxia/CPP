@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:54:43 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/08 13:39:17 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/09 16:32:36 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,13 @@ void Bureaucrat::signForm(Form &f)const{
 std::ostream& operator << (std::ostream &os, Bureaucrat const &obj){
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".\n";
     return (os);
+}
+
+void Bureaucrat::executeForm(Form const &form){
+    try{
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.getName() << "\n";
+    }catch(std::exception &e){
+        std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << "\n";
+    }
 }

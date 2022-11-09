@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:23:58 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/08 15:36:22 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/09 12:41:31 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ShrubberyCreationForm : public Form{
         ShrubberyCreationForm& operator=(ShrubberyCreationForm const &rhs);
 
         std::string getTarget(void)const;
-        
+        void execute(Bureaucrat const &executor);
         
     private:
         std::string _target;

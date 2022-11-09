@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:54:39 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/08 14:13:16 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/09 12:16:14 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Bureaucrat{
     public:
         Bureaucrat(void);
         Bureaucrat(std::string name, unsigned int grade);
-        Bureaucrat(Bureaucrat const &src); // forget why &reference
+        Bureaucrat(Bureaucrat const &src);
         ~Bureaucrat(void);
 
         Bureaucrat &operator=(Bureaucrat const &rhs);

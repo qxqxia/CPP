@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:26:25 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/08 15:37:38 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/09 12:41:40 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class RobotomyRequestForm : public Form{
         RobotomyRequestForm& operator=(RobotomyRequestForm const &rhs);
 
         std::string getTarget(void)const;
+        void execute(Bureaucrat const &executor);
     private:
         std::string _target;
 };

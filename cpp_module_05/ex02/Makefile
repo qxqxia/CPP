@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 15:56:35 by qxia              #+#    #+#              #
-#    Updated: 2022/11/08 14:15:22 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/09 14:13:17 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS := main.cpp \
 		Form.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm \
+		ShrubberyCreationForm.cpp \
 
 OBJS := $(SRCS:%.cpp=%.o)
 

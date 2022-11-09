@@ -1,62 +1,49 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 16:09:18 by xuwang            #+#    #+#             */
-/*   Updated: 2022/11/08 14:01:49 by qxia             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int main() {
-    Bureaucrat  b1("b1", 1);
-    std::cout << b1 << std::endl;
-    
-    Bureaucrat  b2("b2", 100);
-    std::cout << b2 << std::endl; //boolean et sign encore to learn
+int	main(){
+	/* Form is an abstract class, can't be instatiate.
+	Form	f1("f1", 150, 150);
+	Form	f2("f2", 149, 149);
+	*/
 
-    Form f1("f1", 100, 50);
-    std::cout << f1;
+	Bureaucrat b1("b1", 150);
+	std::cout << b1;
+	Bureaucrat b2("b2", 1);
+	std::cout << b2;
+	std::cout << "\n";
 
-    Form f2("f2", 70, 20);
-    std::cout << f2;
+	ShrubberyCreationForm scfForm = ShrubberyCreationForm("SCF_Target");
+	std::cout << scfForm;
+	RobotomyRequestForm roboForm = RobotomyRequestForm("RRF_Target");
+	std::cout << roboForm;
+	PresidentialPardonForm ppForm = PresidentialPardonForm("PPF_Target");
+	std::cout << ppForm;
+	std::cout << "\n";
 
-    b1.signForm(f1);
-    b1.signForm(f2);
-    b2.signForm(f1);
-    b2.signForm(f2);
+	b1.signForm(scfForm);
+	b1.executeForm(scfForm);
+	std::cout << "\n";
 
-    std::cout << "check assigned f2 == 100" << std::endl;
-    f2 = f1;  //change signegrade is 70
-    b2.signForm(f2);
+	b2.signForm(scfForm);
+	b2.executeForm(scfForm);
+	std::cout << "\n";
 
-    
-    std::cout << std::endl;
-    std::cout << "-------------Exceptin test-----------" << std::endl;
-    try
-    {
-           Bureaucrat B1("B1", 80);
-           std::cout << B1 << std::endl;
+	b2.signForm(roboForm);
+	b2.executeForm(roboForm);
+	std::cout << "\n";
 
-           Form F1("F1", 50, 10);
-           B1.signForm(F1);  //B1 == 80 
-    }
-    catch (std::exception & e) {
-       std::cerr << e.what() << std::endl;
-    }
-     std::cout << "--------check wrong form------------" << std::endl;
-    try
-    {
-        Form F2("F2", -1, 151);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    return 0;
+	b2.signForm(ppForm);
+	b2.executeForm(ppForm);
+	std::cout << "\n";
+
+	b1.signForm(ppForm);
+	b1.executeForm(ppForm);
+	std::cout << "\n";
+
+	return (0);
 }

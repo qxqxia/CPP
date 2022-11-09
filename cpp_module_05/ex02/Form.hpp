@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:17:55 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/08 14:22:45 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/09 15:11:01 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ class Form{
                 return "Error: the grade is too low.\n";
             }
         };
+        class FormUnsignedException : public std::exception{
+            const char *what() const throw(){
+                return "Error: the form is not signed.\n";
+            }
+        };
 
         std::string getName(void) const;
         bool getIssigned(void) const;
@@ -42,6 +47,7 @@ class Form{
         unsigned int getGradeforExec(void) const;
 
         void beSigned(Bureaucrat const &b);
+        virtual void execute(Bureaucrat const &executor) = 0;
 
     private:
         const std::string _name;
