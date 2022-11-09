@@ -1,16 +1,23 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 19:44:57 by qinxia            #+#    #+#             */
+/*   Updated: 2022/11/09 19:45:53 by qinxia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int	main(){
-	/* Form is an abstract class, can't be instatiate.
-	Form	f1("f1", 150, 150);
-	Form	f2("f2", 149, 149);
-	*/
-
+int main()
+{
 	Bureaucrat b1("b1", 150);
 	std::cout << b1;
 	Bureaucrat b2("b2", 1);
