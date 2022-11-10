@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/09 11:15:17 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/10 11:25:03 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ Form &Form::operator=(Form const &rhs){
     if (this == &rhs)
         return (*this);
     (std::string &)this->_name = rhs._name;
-    (unsigned int &)_GradeforSigner = rhs._GradeforSigner;
-    (unsigned int &)_GradeforExec = rhs._GradeforExec;
+    (unsigned int &)this->_GradeforSigner = rhs._GradeforSigner;
+    (unsigned int &)this->_GradeforExec = rhs._GradeforExec;
     return (*this);
 }
 
