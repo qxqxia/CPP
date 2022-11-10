@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:21:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/09 19:42:42 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:40:24 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
         throw FormUnsignedException();
     if (executor.getGrade() > this->getGradeforExec())
         throw GradeTooLowException();
-    std::cout << executor.getName() << " execute " << this->getName() << ".\n";
     srand(time(NULL)); // srand函数的作用是根据参数seed，设置一个随机起始点,而rand函数根据这个起始点，产生随机数序列
     if (rand() % 2 == 0)
     {

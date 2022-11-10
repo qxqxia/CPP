@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:24:49 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/09 19:42:39 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:41:02 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
         throw FormUnsignedException();
     if (executor.getGrade() > this->getGradeforExec())
         throw GradeTooLowException();
-    std::cout << executor.getName() << " execute " << this->getName() << "\n";
     std::cout << this->_target << " was forgiven by Zaphod Beeblebrox.\n";
 }

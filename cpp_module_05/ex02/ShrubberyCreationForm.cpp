@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:25:31 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/09 19:42:53 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:34:31 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         throw FormUnsignedException();
     if (executor.getGrade() > this->getGradeforExec())
         throw GradeTooLowException();
-    std::cout << executor.getName() << " execute " << this->getName() << ".\n";
     std::fstream fs;
     std::string filename = this->_target + "_shrubbery";
     fs.open(filename.c_str(), std::fstream::out); // out: file open for writing
@@ -69,6 +68,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
        << "       │ │\n"
        << "       │ │\n"
        << "\n";
-    std::cout << executor.getName() << " execute " << this->getName() << "\n";
     std::cout << this->_target << "_shrubbery has been created and there is a ASCII tree in it.\n";
 }
