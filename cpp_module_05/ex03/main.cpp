@@ -6,14 +6,14 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:09:01 by xuwang            #+#    #+#             */
-/*   Updated: 2022/11/14 10:44:45 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/14 10:51:31 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-int main() {
-
+int main() 
+{
     std::cout << "~~~~~~ShrubberyCreationForm 145, 137 tests~~~~~\n";
      try {
         Bureaucrat b1("b1", 120);

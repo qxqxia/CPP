@@ -6,14 +6,15 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:09:18 by xuwang            #+#    #+#             */
-/*   Updated: 2022/11/09 11:43:11 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/14 10:50:50 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int main() {
+int main() 
+{
     Bureaucrat  b1("b1", 1);
     std::cout << b1 << std::endl;
     

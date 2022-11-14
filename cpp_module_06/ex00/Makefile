@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 15:56:35 by qxia              #+#    #+#              #
-#    Updated: 2022/11/10 15:24:30 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/14 16:27:59 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := Robot
+NAME := convert
 
 SRCS := main.cpp \
+		Convert.cpp \
 		
 OBJS := $(SRCS:%.cpp=%.o)
 
