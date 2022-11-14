@@ -26,13 +26,13 @@ Convert::Convert(Convert const &src){
 }
         
 Convert::~Convert(void){
-    std::Cout << "Convert destructor called.\n";
+    std::cout << "Convert destructor called.\n";
 }
 
         
 Convert& Convert::operator=(Convert const &rhs){
     std::cout << "Convert copy assignment operator called.\n";
-    if (this = &rhs)
+    if (this == &rhs)
         return (*this);
     this->_str = rhs._str;
     return (*this);
