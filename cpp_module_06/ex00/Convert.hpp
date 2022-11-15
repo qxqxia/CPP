@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:28:21 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/14 17:04:19 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/15 16:39:22 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ class Convert{
         operator double(void);
 
         std::string getStr(void)const;
+        void printResult(void);
 
+        class TypeErrorException : public std::exception{
+            const char *what() const throw();
+        };
     private:
         std::string _str;
 };
