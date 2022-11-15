@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:28:21 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/14 17:04:19 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/15 14:41:57 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define CONVERT_HPP
 
 #include <iostream>
+#include <locale>
 #include <string>
-#include <stdlib.h>
 
 class Convert{
     public:
@@ -26,12 +26,20 @@ class Convert{
 
         Convert& operator=(Convert const &rhs);
 
-        operator char(void);
-        operator int(void);
-        operator float(void);
-        operator double(void);
-
         std::string getStr(void)const;
+
+        //input check
+        bool checkStrType();
+        bool checkInt();
+        bool checkFloat();
+        bool checkChar();
+        bool checkDouble();
+
+        //convert input
+        void convertToInt();
+        void convertToFloat();
+        void convertToChar();
+        void convertToDouble();
 
     private:
         std::string _str;
