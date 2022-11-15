@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 16:28:21 by qxia              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/11/15 16:39:22 by qxia             ###   ########.fr       */
-=======
-/*   Updated: 2022/11/15 14:41:57 by qxia             ###   ########.fr       */
->>>>>>> c9558fd838e254ee55846983aa2b55fc3fb148d3
+/*   Created: 2022/11/15 20:18:55 by qinxia            #+#    #+#             */
+/*   Updated: 2022/11/15 23:15:55 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,40 +16,37 @@
 #include <iostream>
 #include <locale>
 #include <string>
+#include <limits>
+#include <cfloat>
 
-class Convert{
-    public:
-        Convert(void);
-        Convert(std::string str);
-        Convert(Convert const &src);
-        ~Convert(void);
+class Convert
+{
+public:
+    Convert(void);
+    Convert(std::string str);
+    Convert(Convert const &src);
+    ~Convert(void);
 
-        Convert& operator=(Convert const &rhs);
+    Convert &operator=(Convert const &rhs);
 
-        std::string getStr(void)const;
-        void printResult(void);
+    std::string getStr(void) const;
+    operator char(void);
+    operator int(void);
+    operator float(void);
+    operator double(void);
+    void printResult(void);
 
-<<<<<<< HEAD
-        class TypeErrorException : public std::exception{
-            const char *what() const throw();
-        };
-=======
-        //input check
-        bool checkStrType();
-        bool checkInt();
-        bool checkFloat();
-        bool checkChar();
-        bool checkDouble();
+    class TypeErrorException : public std::exception
+    {
+        const char *what() const throw();
+    };
+    class PrintErrorException : public std::exception
+    {
+        const char *what() const throw();
+    };
 
-        //convert input
-        void convertToInt();
-        void convertToFloat();
-        void convertToChar();
-        void convertToDouble();
-
->>>>>>> c9558fd838e254ee55846983aa2b55fc3fb148d3
-    private:
-        std::string _str;
+private:
+    std::string _str;
 };
 
 #endif
