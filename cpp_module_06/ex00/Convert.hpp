@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:18:55 by qinxia            #+#    #+#             */
-/*   Updated: 2022/11/15 23:15:55 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/16 11:58:02 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <string>
 #include <limits>
 #include <cfloat>
+#include <bits/stdc++.h>
 
 class Convert
 {

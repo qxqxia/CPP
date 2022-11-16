@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:19:36 by qinxia            #+#    #+#             */
-/*   Updated: 2022/11/15 23:15:51 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/16 14:02:34 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,53 +34,74 @@ Convert::operator char(void)
 {
     std::string str = this->getStr();
     char *pEnd = NULL;
-    long double c = 0;
+    long double s = 0;
 
-    c = std::strtold(str.c_str(), &pEnd);
-    if (str == pEnd || pEnd[0] != '\0')
+    s = std::strtold(str.c_str(), &pEnd);
+    std::cout << s << std::endl;
+    if (str == pEnd || (pEnd && pEnd[0] != '\0' && pEnd[0] != 'f')\
+    || (pEnd[0] = 'f' && pEnd[1] != '\0'))
         throw TypeErrorException();
-    if (c < 32 || c > 126)
+    std::cout << s << std::endl;
+    if (s < 32 || s > 126)
         throw PrintErrorException();
-    return (c);
+    return (s);
 }
 
 Convert::operator int(void)
 {
     std::string str = this->getStr();
     char *pEnd = NULL;
-    long double i = 0;
+    long double s = 0;
 
-    i = std::strtold(str.c_str(), &pEnd);
-    if (str == pEnd || pEnd[0] != '\0')
+    s = std::strtold(str.c_str(), &pEnd);
+    if (str == pEnd || (pEnd[0] != '\0'&& pEnd[0] != 'f') \
+    || (pEnd[0] = 'f' && pEnd[1] != '\0'))
         throw TypeErrorException();
-    if (i < INT_MIN || i > INT_MAX)
+    if (s < INT_MIN || s > INT_MAX)
         throw PrintErrorException();
-    return (i);
+    return (s);
+}
+
+bool	isNanOrInf(std::string str) {
+	if (!str.compare("nan") || !str.compare("nanf") || \
+		!str.compare("+nan") || !str.compare("+nanf") || \
+		!str.compare("-nan") || !str.compare("-nanf") || \
+		!str.compare("inf") || !str.compare("inff") || \
+		!str.compare("-inf") || !str.compare("+inf") || \
+		!str.compare("-inff") || !str.compare("+inff")){
+		return (true);
+	}
+	return (false);
 }
 
 Convert::operator float(void)
 {
     std::string str = this->getStr();
     char *pEnd = NULL;
-    long double f = 0;
+    long double s = 0;
 
-    f = std::strtold(str.c_str(), &pEnd);
-    if (str == pEnd || pEnd[0] != '\0')
+    if (isNanOrInf(str) == true)
+		return (std::strtod(this->getStr().c_str(), &pEnd));
+    s = std::strtold(str.c_str(), &pEnd);
+    if (str == pEnd || (pEnd[0] != '\0' && pEnd[0] != 'f') \
+    || (pEnd[0] = 'f' && pEnd[1] != '\0'))
         throw TypeErrorException();
-    if (f < FLT_MIN || f > FLT_MAX)
-        return (f);
+    return (s);
 }
 
 Convert::operator double(void)
 {
     std::string str = this->getStr();
     char *pEnd = NULL;
-    long double d = 0;
+    long double s = 0;
 
-    d = std::strtold(str.c_str(), &pEnd);
-    if (str == pEnd || pEnd[0] != '\0')
+    if (isNanOrInf(str) == true)
+		return (std::strtod(this->getStr().c_str(), &pEnd));
+    s = std::strtold(str.c_str(), &pEnd);
+    if (str == pEnd || (pEnd[0] != '\0' && pEnd[0] != 'f') \
+    || (pEnd[0] = 'f' && pEnd[1] != '\0'))
         throw TypeErrorException();
-    return (d);
+    return (s);
 }
 
 std::string Convert::getStr(void) const
@@ -94,7 +115,7 @@ void Convert::printResult(void)
     try
     {
         char c = static_cast<char>(*this);
-        std::cout << c << std::endl;
+        std::cout << "'" << c << "'" << std::endl;
     }
     catch (std::exception &e)
     {
@@ -114,7 +135,8 @@ void Convert::printResult(void)
     try
     {
         float f = static_cast<float>(*this);
-        std::cout << f << std::endl;
+        std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(1);
+        std::cout << f << "f" << std::endl;
     }
     catch (std::exception &e)
     {
@@ -124,6 +146,7 @@ void Convert::printResult(void)
     try
     {
         double d = static_cast<double>(*this);
+        std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(1);
         std::cout << d << std::endl;
     }
     catch (std::exception &e)
@@ -134,7 +157,7 @@ void Convert::printResult(void)
 
 const char *Convert::TypeErrorException::what() const throw()
 {
-    return ("Invalid syntax");
+    return ("impossible");
 }
 
 const char *Convert::PrintErrorException::what() const throw()
