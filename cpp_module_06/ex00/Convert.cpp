@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:19:36 by qinxia            #+#    #+#             */
-/*   Updated: 2022/11/16 14:02:34 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/16 14:31:16 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,33 @@ Convert &Convert::operator=(Convert const &rhs)
     return (*this);
 }
 
+bool	isNanOrInf(std::string str) {
+	if (!str.compare("nan") || !str.compare("nanf") || \
+		!str.compare("+nan") || !str.compare("+nanf") || \
+		!str.compare("-nan") || !str.compare("-nanf") || \
+		!str.compare("inf") || !str.compare("inff") || \
+		!str.compare("-inf") || !str.compare("+inf") || \
+		!str.compare("-inff") || !str.compare("+inff")){
+		return (true);
+	}
+	return (false);
+}
+
 Convert::operator char(void)
 {
     std::string str = this->getStr();
     char *pEnd = NULL;
     long double s = 0;
 
+    if (isNanOrInf(str) == true)
+		throw TypeErrorException();
     s = std::strtold(str.c_str(), &pEnd);
-    std::cout << s << std::endl;
-    if (str == pEnd || (pEnd && pEnd[0] != '\0' && pEnd[0] != 'f')\
-    || (pEnd[0] = 'f' && pEnd[1] != '\0'))
+    if (str == pEnd)
         throw TypeErrorException();
-    std::cout << s << std::endl;
+    if (pEnd[0] != '\0' && pEnd[0] != 'f')
+        throw TypeErrorException();
+    if (pEnd[0] == 'f' && pEnd[1] != '\0')
+        throw TypeErrorException();
     if (s < 32 || s > 126)
         throw PrintErrorException();
     return (s);
@@ -53,25 +68,18 @@ Convert::operator int(void)
     char *pEnd = NULL;
     long double s = 0;
 
+    if (isNanOrInf(str) == true)
+		throw TypeErrorException();
     s = std::strtold(str.c_str(), &pEnd);
-    if (str == pEnd || (pEnd[0] != '\0'&& pEnd[0] != 'f') \
-    || (pEnd[0] = 'f' && pEnd[1] != '\0'))
+     if (str == pEnd)
+        throw TypeErrorException();
+    if (pEnd[0] != '\0' && pEnd[0] != 'f')
+        throw TypeErrorException();
+    if (pEnd[0] == 'f' && pEnd[1] != '\0')
         throw TypeErrorException();
     if (s < INT_MIN || s > INT_MAX)
         throw PrintErrorException();
     return (s);
-}
-
-bool	isNanOrInf(std::string str) {
-	if (!str.compare("nan") || !str.compare("nanf") || \
-		!str.compare("+nan") || !str.compare("+nanf") || \
-		!str.compare("-nan") || !str.compare("-nanf") || \
-		!str.compare("inf") || !str.compare("inff") || \
-		!str.compare("-inf") || !str.compare("+inf") || \
-		!str.compare("-inff") || !str.compare("+inff")){
-		return (true);
-	}
-	return (false);
 }
 
 Convert::operator float(void)
