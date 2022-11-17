@@ -59,3 +59,6 @@ object types （从一个指向成员的指针转向另一个指向类成员的�
 3. dynamic_cast
 使用dynamic_cast有一个必要条件就是基类A中必须存在虚函数;
 类中存在虚函数，就说明它有想要让基类指针或引用指向派生类对象的情况，此时转换才有意义
+
+//"You cannot verify the success of a dynamic cast using reference types by comparing the result (the reference that results from the dynamic cast) with zero 
+//because there is no such thing as a zero reference. A failing dynamic cast to a reference type throws a bad_cast exception.

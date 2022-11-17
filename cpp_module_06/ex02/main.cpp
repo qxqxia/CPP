@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:43:05 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/16 17:44:44 by qxia             ###   ########.fr       */
+<<<<<<< HEAD
+/*   Updated: 2022/11/17 13:46:13 by qxia             ###   ########.fr       */
+=======
+/*   Updated: 2022/11/16 23:15:36 by qinxia           ###   ########.fr       */
+>>>>>>> 01c6361c0d6c934179bbfc1ec55d5ddb7ca6d405
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+
+<<<<<<< HEAD
+Base::~Base(void){}
 
 Base* generate(void){
     srand(time(NULL));
@@ -33,13 +40,13 @@ void identify(Base* p){
     B* pB = dynamic_cast<B*>(p);
     C* pC = dynamic_cast<C*>(p);
     
-    if (pA != nullptr){
+    if (pA){
         std::cout << "A\n";
     }
-    if (pB != nullptr){
+    else if (pB){
         std::cout << "B\n";
     }
-    if (pC != nullptr){
+    else if (pC){
         std::cout << "C\n";
     }
     else{
@@ -51,18 +58,37 @@ void identify(Base* p){
 void identify(Base& p){
     try{
         A& a = dynamic_cast<A&>(p);
+        (void)a;
         std::cout << "A\n";
-    }catch(std::bad_cast){}
+    }catch(std::exception &e){
+        std::cout << "A " << e.what() << std::endl;
+    }
     try{
         B& b = dynamic_cast<B&>(p);
+        (void)b;
         std::cout << "B\n";
-    }catch(std::bad_cast){}
+    }catch(std::exception &e){
+        std::cout << "B " << e.what() << std::endl;
+    }
     try{
         C& c = dynamic_cast<C&>(p);
+        (void)c;
         std::cout << "C\n";
-    }catch(std::bad_cast){}
+    }catch(std::exception &e){
+        std::cout << "C " << e.what() << std::endl;
+    }
 }
 
 int main(){
-    
+    Base*  baseptr = generate();
+
+    identify(baseptr);
+    identify(*baseptr);
+
+    delete baseptr;
+    return (0);
+=======
+int main()
+{
+>>>>>>> 01c6361c0d6c934179bbfc1ec55d5ddb7ca6d405
 }
