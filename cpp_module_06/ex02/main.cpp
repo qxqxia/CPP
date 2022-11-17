@@ -3,79 +3,96 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:43:05 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/17 13:46:13 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/17 22:04:25 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::~Base(void){}
+Base::~Base(void) {}
 
-Base* generate(void){
+Base *generate(void)
+{
     srand(time(NULL));
     int i = rand() % 3;
-    
-    switch(i){
-        case 0:
-            return (new A());
-        case 1:
-            return (new B());
-        case 2:
-            return (new C());
-        default:
-            return NULL;
+
+    switch (i)
+    {
+    case 0:
+        return (new A());
+    case 1:
+        return (new B());
+    case 2:
+        return (new C());
+    default:
+        return NULL;
     }
 }
 
-void identify(Base* p){
-    A* pA = dynamic_cast<A*>(p);
-    B* pB = dynamic_cast<B*>(p);
-    C* pC = dynamic_cast<C*>(p);
-    
-    if (pA){
+void identify(Base *p)
+{
+    A *pA = dynamic_cast<A *>(p);
+    B *pB = dynamic_cast<B *>(p);
+    C *pC = dynamic_cast<C *>(p);
+
+    if (pA)
+    {
         std::cout << "A\n";
     }
-    else if (pB){
+    else if (pB)
+    {
         std::cout << "B\n";
     }
-    else if (pC){
+    else if (pC)
+    {
         std::cout << "C\n";
     }
-    else{
+    else
+    {
         std::cout << "Downcast failed.\n";
     }
-    
 }
 
-void identify(Base& p){
-    try{
-        A& a = dynamic_cast<A&>(p);
+void identify(Base &p)
+{
+    try
+    {
+        A &a = dynamic_cast<A &>(p);
         (void)a;
         std::cout << "A\n";
-    }catch(std::exception &e){
+    }
+    catch (std::exception &e)
+    {
         std::cout << "A " << e.what() << std::endl;
     }
-    try{
-        B& b = dynamic_cast<B&>(p);
+    try
+    {
+        B &b = dynamic_cast<B &>(p);
         (void)b;
         std::cout << "B\n";
-    }catch(std::exception &e){
+    }
+    catch (std::exception &e)
+    {
         std::cout << "B " << e.what() << std::endl;
     }
-    try{
-        C& c = dynamic_cast<C&>(p);
+    try
+    {
+        C &c = dynamic_cast<C &>(p);
         (void)c;
         std::cout << "C\n";
-    }catch(std::exception &e){
+    }
+    catch (std::exception &e)
+    {
         std::cout << "C " << e.what() << std::endl;
     }
 }
 
-int main(){
-    Base*  baseptr = generate();
+int main()
+{
+    Base *baseptr = generate();
 
     identify(baseptr);
     identify(*baseptr);
