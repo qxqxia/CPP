@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 16:43:05 by qxia              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/11/17 13:46:13 by qxia             ###   ########.fr       */
-=======
-/*   Updated: 2022/11/16 23:15:36 by qinxia           ###   ########.fr       */
->>>>>>> 01c6361c0d6c934179bbfc1ec55d5ddb7ca6d405
+/*   Created: 2022/11/17 14:00:52 by qxia              #+#    #+#             */
+/*   Updated: 2022/11/17 14:01:12 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-<<<<<<< HEAD
+
 Base::~Base(void){}
 
 Base* generate(void){
@@ -52,7 +48,6 @@ void identify(Base* p){
     else{
         std::cout << "Downcast failed.\n";
     }
-    
 }
 
 void identify(Base& p){
@@ -87,8 +82,4 @@ int main(){
 
     delete baseptr;
     return (0);
-=======
-int main()
-{
->>>>>>> 01c6361c0d6c934179bbfc1ec55d5ddb7ca6d405
 }
