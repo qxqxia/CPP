@@ -6,13 +6,14 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:11:47 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/17 16:16:04 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/18 10:35:38 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 
 int main( void ) {
+    std::cout << "~~~Tests in the subject~~~\n";
     int a = 2;
     int b = 3;
     ::swap( a, b );
@@ -25,5 +26,9 @@ int main( void ) {
     std::cout << "c = " << c << ", d = " << d << std::endl;
     std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
     std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+    std::cout << "~~~My tests~~~\n";
+
+
+    
     return 0;
 }
