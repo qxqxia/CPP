@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:32:28 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/17 16:33:28 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/18 15:08:42 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ template<typename T>
 
 class Array{
     public:
-        Array<T>(T const &content) {
-            
-        }
-        Array<T>(Array<T> const &Array){
-            
-        }
-        ~Array<T>(void){
-            
-        }
+        Array(void);
+        Array(unsigned int const &n);
+        Array(Array const &Array);
+        ~Array(void);
+
+        Array& operator=(Array const &rhs);
+        T& operator[](unsigned int index);
+        unsigned int size()const;
+        
     private:
-        T*          _content;
-        Array<T>*    _next;
+        unsigned int    _size;
+        
 };
 
 #endif
