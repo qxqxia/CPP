@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:32:28 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/18 16:38:02 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/21 10:54:15 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <stdlib.h>
 
 template<typename T>
 
@@ -27,7 +28,7 @@ class Array{
         Array& operator=(Array const &rhs);
         T& operator[](unsigned int index);
         unsigned int size(void)const;
-        
+
     private:
         unsigned int    _size;
         T               *_array;
