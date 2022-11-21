@@ -62,3 +62,12 @@ object types （从一个指向成员的指针转向另一个指向类成员的�
 
 //"You cannot verify the success of a dynamic cast using reference types by comparing the result (the reference that results from the dynamic cast) with zero 
 //because there is no such thing as a zero reference. A failing dynamic cast to a reference type throws a bad_cast exception.
+
+所以除此之外，还可以采用在堆空间中动态申请内存的方法，此时长度可以是变量：
+int *p = new int[n];
+
+这种定义方式可根据变量 n 动态申请内存，不会出现存储空间浪费的问题。但是，如果程序执行过程中出现空间不足的情况时，则需要加大存储空间，此时需要进行如下操作：
+新申请一个较大的内存空间,即执行int * temp = new int[m];
+将原内存空间的数据全部复制到新申请的内存空间中,即执行memecpy(temp, p, sizeof(int)*n);
+将原来的堆空间释放,即执行delete [] p; p = temp;
+STL vector can resolve this problem

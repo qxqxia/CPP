@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 15:56:35 by qxia              #+#    #+#              #
-#    Updated: 2022/11/18 13:38:22 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/21 14:38:08 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME := Array
 
 SRCS := main.cpp \
+		Span.cpp \
 		
 OBJS := $(SRCS:%.cpp=%.o)
 

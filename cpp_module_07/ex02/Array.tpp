@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:03:37 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/21 14:25:05 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/21 15:11:54 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Array<T>::Array(void) : _size(0), _array(new T[0]){}
 template<typename T>
 Array<T>::Array(unsigned int const &n) : _size(n), _array(new T[n]){
     
-}
+}// if the memory is not suffiant.
 
 template<typename T>
 Array<T>::Array(Array const &src){
