@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:37:35 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/22 12:11:32 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/22 15:42:41 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@
 #include <algorithm> //std::find
 #include <vector>
 #include <list>
-//#include <typeinfo>
 
-template <typename T>
+template<typename T>
 int easyfind(T a, int val) {
-    typename T<int>::iterator it = std::find(a.begin(), a.end(), val);
+    typename T::iterator it = std::find(a.begin(), a.end(), val);
     if (it == a.end())
         throw std::exception();
     return (*it);

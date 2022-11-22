@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:37:28 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/22 12:10:20 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/22 14:19:09 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(){
 	
 	try{
 		easyfind(myints, 30);
-		std::cout << "find: " << *it << std::endl;
+		std::cout << "find.\n";
 	}catch(const std::exception &e){};
 	return 0;
+}
