@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:32:28 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/21 10:54:15 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/22 10:40:03 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Array{
         ~Array(void);
 
         Array& operator=(Array const &rhs);
-        T& operator[](unsigned int index);
+       
+       	T& operator[](unsigned int index);
         unsigned int size(void)const;
 
     private:

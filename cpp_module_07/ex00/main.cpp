@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:11:47 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/21 17:46:08 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/22 10:37:57 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int main( void ) {
     std::cout << "c1 = " << c1 << ", c2 = " << c2 << std::endl;
     std::cout << "min( c1, c2 ) = " << ::min( c1, c2 ) << std::endl;
     std::cout << "max( c1, c2 ) = " << ::max( c1, c2 ) << std::endl;
-    
+    float f1 = 42.12345f;
+    float f2 = 40.123f;   
+    ::swap( f1, f2 );
+    std::cout << "f1 = " << f1 << ", f2 = " << f2 << std::endl;
+    std::cout << "min( f1, f2 ) = " << ::min( f1, f2 ) << std::endl;
+    std::cout << "max( f1, f2 ) = " << ::max( f1, f2 ) << std::endl;
+       
     return 0;
 }
