@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 15:56:35 by qxia              #+#    #+#              #
-#    Updated: 2022/11/21 14:38:08 by qxia             ###   ########.fr        #
+#    Updated: 2022/11/23 11:50:08 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME := Array
+NAME := Span
 
 SRCS := main.cpp \
 		Span.cpp \
