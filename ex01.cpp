@@ -71,3 +71,11 @@ int *p = new int[n];
 将原内存空间的数据全部复制到新申请的内存空间中,即执行memecpy(temp, p, sizeof(int)*n);
 将原来的堆空间释放,即执行delete [] p; p = temp;
 STL vector can resolve this problem
+
+List封装了链表,Vector封装了数组, 
+list和vector得最主要的区别在于vector使用连续内存存储的,他支持[]运算符,而list是以链表形式实现的,不支持[]。 
+Vector对于随机访问的速度很快,但是对于插入尤其是在头部插入元素速度很慢,在尾部插入速度很快。
+
+1. 创建vector<T>容器
+因为容器中没有元素，所以没有分配空间，当添加第一个数据项时，会自动分配内存。可以像下面这样通过调用 reserve() 来增加容器的容量.
+2. 
