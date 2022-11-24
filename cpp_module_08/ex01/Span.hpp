@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:38:22 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/23 17:55:09 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/24 08:58:07 by qinxia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,30 @@
 #define SPAN_HPP
 
 #include <iostream>
-#include <list>
+#include <vector>
 
-class Span{
-    public:
-        Span(void);
-        Span(unsigned int N);
-        Span(Span const &src);
-        ~Span(void);
+class Span
+{
+public:
+    Span(void);
+    Span(unsigned int N);
+    Span(Span const &src);
+    ~Span(void);
 
-        Span& operator=(Span const &rhs);
-        
-        unsigned int addNumber(void);
-        unsigned int shortestSpan(void);
-        unsigned int longestSpan(void);
-    private:
-        unsigned int        _n;
+    Span &operator=(Span const &rhs);
+
+    void addNumber(int);
+    void addMoreNumber(unsigned int n);
+    unsigned int shortestSpan(void) const;
+    unsigned int longestSpan(void) const;
+
+    unsigned int getSize(void) const;
+    std::vector<int> const &getArray(void) const;
+    void printArray(void) const;
+
+private:
+    unsigned int _size;
+    std::vector<int> _myvector;
 };
 
 #endif
