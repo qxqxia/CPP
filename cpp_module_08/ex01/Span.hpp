@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:38:22 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/24 08:58:07 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/24 15:15:24 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,32 @@
 
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+#include <iterator>
+#include <algorithm>
+#include <exception>
 
-class Span
-{
-public:
-    Span(void);
-    Span(unsigned int N);
-    Span(Span const &src);
-    ~Span(void);
+class Span{
+    public:
+        Span(void);
+        Span(unsigned int N);
+        Span(Span const &src);
+        ~Span(void);
 
-    Span &operator=(Span const &rhs);
+        Span &operator=(Span const &rhs);
 
-    void addNumber(int);
-    void addMoreNumber(unsigned int n);
-    unsigned int shortestSpan(void) const;
-    unsigned int longestSpan(void) const;
+        void addNumber(int nbr);
+        void addMoreNumber(unsigned int n);
+        int shortestSpan(void) const;
+        int longestSpan(void) const;
 
-    unsigned int getSize(void) const;
-    std::vector<int> const &getArray(void) const;
-    void printArray(void) const;
+        unsigned int getSize(void) const;
+        std::vector<int> const &getArray(void) const;
+        void printArray(void) const;
 
-private:
-    unsigned int _size;
-    std::vector<int> _myvector;
+    private:
+        unsigned int        _size;
+        std::vector<int>    _myvector;
 };
 
 #endif
