@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:37:56 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/24 15:20:37 by qxia             ###   ########.fr       */
+/*   Updated: 2022/11/24 16:37:40 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ int Span::shortestSpan(void)const{
 int Span::longestSpan(void)const{
     std::vector<int> tmp = _myvector;
     std::sort(tmp.begin(), tmp.end());
-    return (*(tmp.end() - 1) - *tmp.begin());
+    return (*(tmp.rbegin()) - *tmp.begin());
 }
