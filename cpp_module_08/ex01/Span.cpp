@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:37:56 by qxia              #+#    #+#             */
-/*   Updated: 2022/11/24 22:04:22 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/11/25 10:27:54 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ Span::Span(Span const &src) : _size(src.getSize()), _myvector(src.getArray()) {}
 
 Span::~Span(void) {}
 
-Span &Span::operator=(Span const &rhs)
-{
+Span &Span::operator=(Span const &rhs){
     if (this == &rhs)
         return (*this);
     this->_size = rhs.getSize();
@@ -29,58 +28,49 @@ Span &Span::operator=(Span const &rhs)
     return (*this);
 }
 
-unsigned int Span::getSize(void) const
-{
+unsigned int Span::getSize(void) const{
     return (this->_size);
 }
 
-std::vector<int> const &Span::getArray(void) const
-{
+std::vector<int> const &Span::getArray(void) const{
     return (this->_myvector);
 }
 
-void Span::addNumber(int nbr)
-{
+void Span::addNumber(int nbr){
     if (getSize() == 0 || _myvector.size() == getSize())
         throw std::exception();
     _myvector.push_back(nbr);
 }
 
-void Span::addMoreNumber(unsigned int n)
-{
+void Span::addMoreNumber(unsigned int n){
     if (getSize() == 0 || n > getSize())
         throw std::exception();
     srand(time(NULL));
-    while (n)
-    {
+    while (n){
         addNumber(std::rand() % RAND_MAX);
         n--;
     }
 }
 
-void Span::printArray(void) const
-{
+void Span::printArray(void) const{
     for (unsigned int i = 0; i < _myvector.size(); i++)
         std::cout << _myvector[i] << std::endl;
 }
 
-int Span::shortestSpan(void) const
-{
+int Span::shortestSpan(void) const{
     if (getSize() == 0 || _myvector.size() < 2)
         throw std::exception();
     std::vector<int> tmp = _myvector;
     std::sort(tmp.begin(), tmp.end());
     int dlta = tmp[1] - tmp[0];
-    for (unsigned int i = 2; i < tmp.size(); i++)
-    {
+    for (unsigned int i = 2; i < tmp.size(); i++){
         if (dlta > tmp[i] - tmp[i - 1])
             dlta = tmp[i] - tmp[i - 1];
     }
     return (dlta);
 }
 
-int Span::longestSpan(void) const
-{
+int Span::longestSpan(void) const{
     if (getSize() == 0 || _myvector.size() < 2)
         throw std::exception();
     std::vector<int> tmp = _myvector;
