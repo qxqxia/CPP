@@ -2,7 +2,6 @@
 #include <stack>
 #include <vector>
 #include <sstream> //stringstream
-#include <cassert>
 using namespace std;
 
 // test stack
@@ -72,7 +71,8 @@ int main(int ac, char **av)
 {
     if (ac == 2)
     {
-        CalculateRPN(SplitStr(av[1]));
+        int res = CalculateRPN(SplitStr(av[1]));
+        cout << res << "\n";
         return 0;
     }
 }
