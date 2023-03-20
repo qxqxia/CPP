@@ -2,43 +2,58 @@
 #include <stack>
 #include <vector>
 #include <sstream> //stringstream
-using namespace std;
+#include <cstdlib>
 
-vector<string> SplitStr(string str)
+std::string SplitStr(std::string str)
 {
-    vector<string> v;
-    stringstream ss(str);
-    string s;
+    std::string s;
 
-    while (ss >> s)
-        v.push_back(s);
-    return v;
+    for (size_t i = 0; i < str.size(); i++)
+    {
+        if (str[i] == ' ')
+            continue ;
+        s +=str[i];
+        s +=' ';
+    }
+    if (s == " " || s == "")
+        return ("Error\n");
+    return (s);
 }
 
-int CalculateRPN(vector<string> tokens)
+int CalculateRPN(std::string tokens)
 {
-    if (tokens.empty())
-        return 0;
+    std::stack<int> tmp;
 
-    stack<int> tmp;
+    if (tokens == "Error\n")
+    {
+        std::cout << tokens ;
+        exit(1);
+    }
+
     for (size_t i = 0; i < tokens.size(); i++)
     {
-        if (tokens[i].size() > 1 || (tokens[i].size() == 1 && tokens[i] >= "0" && tokens[i] <= "9"))
-            tmp.push(atoi(tokens[i].c_str()));
-        else
+        // std::cout << tokens[i] << "\n";
+        if (tokens[i] >= '0' && tokens[i] <= '9')
+            tmp.push(tokens[i] - '0');
+        else if(tokens[i] == '+' ||tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/')
         {
+            if (tmp.size() < 2)
+            {
+                std::cout << "Error\n";
+                exit(1);
+            }
             int b = tmp.top();
             tmp.pop();
             int a = tmp.top();
             tmp.pop();
             int res;
-            if (tokens[i] == "+")
+            if (tokens[i] == '+')
                 res = a + b;
-            else if (tokens[i] == "-")
+            else if (tokens[i] == '-')
                 res = a - b;
-            else if (tokens[i] == "*")
+            else if (tokens[i] == '*')
                 res = a * b;
-            else if (tokens[i] == "/")
+            else if (tokens[i] == '/')
                 res = a / b;
             tmp.push(res);
         }
@@ -50,8 +65,10 @@ int main(int ac, char **av)
 {
     if (ac == 2)
     {
+        //std::string res = SplitStr(std::string(av[1]));
         int res = CalculateRPN(SplitStr(av[1]));
-        cout << res << "\n";
+        std::cout << res << "\n";
         return 0;
     }
+    //return 0;
 }
