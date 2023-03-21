@@ -2,6 +2,8 @@
 #include <stack>
 #include <cstdlib>
 
+# include "RPN.hpp"
+
 int CalculateRPN(std::string tokens)
 {
     std::stack<int> tmp;
@@ -19,7 +21,7 @@ int CalculateRPN(std::string tokens)
         {
             if (tmp.size() < 2)
             {
-                std::cout << "Error\n";
+                std::cout << YELLOW "Error\n" RESET;
                 exit(1);
             }
             int b = tmp.top();
@@ -37,7 +39,7 @@ int CalculateRPN(std::string tokens)
             {
                 if (!b)
                 {
-                    std::cout << "Error\n";
+                    std::cout << YELLOW "Error\n" RESET;
                     exit(1);
                 }
                 res = a / b;
@@ -48,7 +50,7 @@ int CalculateRPN(std::string tokens)
     }
     if (tmp.empty())
     {
-        std::cout << "Error\n";
+        std::cout << YELLOW "Error\n" RESET;
         exit(1);
     }
     return tmp.top();
@@ -59,6 +61,6 @@ int main(int ac, char **av)
     if (ac == 2)
     {
         int res = CalculateRPN(std::string(av[1]));
-        std::cout << res << "\n";
+        std::cout << GREEN << res << "\n";
     }
 }
