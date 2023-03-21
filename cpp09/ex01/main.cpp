@@ -1,7 +1,5 @@
 #include <iostream>
 #include <stack>
-#include <vector>
-#include <sstream> //stringstream
 #include <cstdlib>
 
 // std::string SplitStr(std::string str)
@@ -53,7 +51,15 @@ int CalculateRPN(std::string tokens)
             else if (tokens[i] == '*')
                 res = a * b;
             else if (tokens[i] == '/')
+            {
+                if (!b)
+                {
+                    std::cout << "Error\n";
+                    exit(1);
+                }
                 res = a / b;
+            }
+                
             tmp.push(res);
         }
     }
