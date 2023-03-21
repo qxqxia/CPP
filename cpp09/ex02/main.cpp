@@ -8,7 +8,8 @@ int main(int ac, char **av)
 
     if (ac < 2)
     {
-        
+        std::cout << "";
+        return ;
     }
 
     int i= 0;
