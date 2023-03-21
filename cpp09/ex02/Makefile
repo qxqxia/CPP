@@ -4,7 +4,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = PmergeMe
 
-SRCS = PmergeMe.cpp \
+SRCS = main.cpp \
+		PmergeMe.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
