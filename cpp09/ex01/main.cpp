@@ -4,21 +4,21 @@
 #include <sstream> //stringstream
 #include <cstdlib>
 
-std::string SplitStr(std::string str)
-{
-    std::string s;
+// std::string SplitStr(std::string str)
+// {
+//     std::string s;
 
-    for (size_t i = 0; i < str.size(); i++)
-    {
-        if (str[i] == ' ')
-            continue ;
-        s +=str[i];
-        s +=' ';
-    }
-    if (s == " " || s == "")
-        return ("Error\n");
-    return (s);
-}
+//     for (size_t i = 0; i < str.size(); i++)
+//     {
+//         if (str[i] == ' ')
+//             continue ;
+//         s +=str[i];
+//         s +=' ';
+//     }
+//     if (s == " " || s == "")
+//         return ("Error\n");
+//     return (s);
+// }
 
 int CalculateRPN(std::string tokens)
 {
@@ -70,7 +70,8 @@ int main(int ac, char **av)
     if (ac == 2)
     {
         //std::string res = SplitStr(std::string(av[1]));
-        int res = CalculateRPN(SplitStr(av[1]));
+        // int res = CalculateRPN(SplitStr(av[1]));
+        int res = CalculateRPN(std::string(av[1]));
         std::cout << res << "\n";
     }
 }
