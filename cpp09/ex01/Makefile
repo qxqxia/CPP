@@ -19,7 +19,7 @@ all : $(NAME)
 
 clean:
 	rm -rf $(OBJS)
-
+f : fclean
 fclean: clean
 	rm -rf $(NAME)
 

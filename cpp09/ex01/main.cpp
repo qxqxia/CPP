@@ -29,7 +29,6 @@ int CalculateRPN(std::string tokens)
         std::cout << tokens ;
         exit(1);
     }
-
     for (size_t i = 0; i < tokens.size(); i++)
     {
         // std::cout << tokens[i] << "\n";
@@ -58,6 +57,11 @@ int CalculateRPN(std::string tokens)
             tmp.push(res);
         }
     }
+    if (tmp.empty())
+    {
+        std::cout << "Error\n";
+        exit(1);
+    }
     return tmp.top();
 }
 
@@ -68,7 +72,5 @@ int main(int ac, char **av)
         //std::string res = SplitStr(std::string(av[1]));
         int res = CalculateRPN(SplitStr(av[1]));
         std::cout << res << "\n";
-        return 0;
     }
-    //return 0;
 }
