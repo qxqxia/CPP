@@ -33,5 +33,4 @@ int main(int ac, char **av)
         right = line.substr(line.find(",") + 1);
         dict[left] = atof(right.c_str());
     }
-
 }
