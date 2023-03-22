@@ -5,16 +5,18 @@ int main(int ac, char **av)
 {
     std::vector<int>    v;
     std::deque<int>     d;
-
-    if (ac < 2)
-    {
-        std::cout << "";
-        return ;
-    }
+    struct timeval  tv_start, tv_end;
 
     int i= 0;
     int n;
     int tmp;
+    int start, end, diff_1, diff_2, diff_3, diff_4;
+
+    if (ac < 2)
+    {
+        std::cout << "No given number, exit.\n";
+        return 0;
+    }
 
     while(++i < ac)
     {
