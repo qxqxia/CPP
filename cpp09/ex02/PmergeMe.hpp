@@ -17,4 +17,5 @@ void mergeSort(std::deque<int>& d);
 bool isNumeric(std::string s);
 void printVector(std::vector<int> v, bool option);
 void printDeque(std::deque<int> d, bool option);
+
 # endif

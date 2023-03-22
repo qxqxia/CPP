@@ -99,14 +99,17 @@ void mergeSort(std::deque<int> & d)
 
 bool isNumeric(std::string s)
 {
-    size_t i = -1;
+    size_t i;
 
+    if (s == "")
+        return (false);
+    i = -1;
     while(++i < s.length())
     {
         if (s[i] < '0' || s[i] > '9')
-            return false;
+            return (false);
     }
-    return true;
+    return (true);
 }
 
 void printVector(std::vector<int> v, bool option)
