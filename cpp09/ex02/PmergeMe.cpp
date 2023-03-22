@@ -1,15 +1,15 @@
 #include "PmergeMe.hpp"
 
 //vector
-void mergeSort(std::vector<int>& v)
+void mergeSort(std::vector<long long>& v)
 {
     if (v.size() > 1)
     {
         int i, j, k;
         int mid = v.size() / 2;
 
-        std::vector<int>    left(v.begin(), v.begin() + mid);
-        std::vector<int>    right(v.begin()+ mid, v.end());
+        std::vector<long long>    left(v.begin(), v.begin() + mid);
+        std::vector<long long>    right(v.begin()+ mid, v.end());
 
         mergeSort(left);
         mergeSort(right);
@@ -44,9 +44,9 @@ void mergeSort(std::vector<int>& v)
 }
 
 //deque
-void mergeSort(std::deque<int> & d)
+void mergeSort(std::deque<long long> & d)
 {
-    std::deque<int> left,right;
+    std::deque<long long> left,right;
     int i, mid, size;
 
     if (d.size() < 2)
@@ -112,7 +112,7 @@ bool isNumeric(std::string s)
     return (true);
 }
 
-void printVector(std::vector<int> v, bool option)
+void printVector(std::vector<long long> v, bool option)
 {
     if (option == BEFORE)
         std::cout << "Before:\t" YELLOW;
@@ -134,9 +134,9 @@ void printVector(std::vector<int> v, bool option)
     std::cout << "\n" RESET;
 }
 
-void printDeque(std::deque<int> d, bool option)
+void printDeque(std::deque<long long> d, bool option)
 {
-    std::deque<int>::iterator   it;
+    std::deque<long long>::iterator   it;
     
     if (option == BEFORE)
         std::cout << "Before:\t" YELLOW;

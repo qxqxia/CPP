@@ -12,10 +12,10 @@
 # define GREEN "\033[0;32m"
 # define RESET "\033[0;0m"
 
-void mergeSort(std::vector<int>& v);
-void mergeSort(std::deque<int>& d);
+void mergeSort(std::vector<long long>& v);
+void mergeSort(std::deque<long long>& d);
 bool isNumeric(std::string s);
-void printVector(std::vector<int> v, bool option);
-void printDeque(std::deque<int> d, bool option);
+void printVector(std::vector<long long> v, bool option);
+void printDeque(std::deque<long long> d, bool option);
 
 # endif

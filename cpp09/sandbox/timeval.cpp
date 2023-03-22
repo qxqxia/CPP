@@ -13,3 +13,12 @@ int main()
         std::cout << tv.tv_usec << " " <<  tv.tv_sec << "\n";    
     }
 }
+
+
+
+// int ret = gettimeofday(&tv, NULL);
+// if (ret = 1)
+// {
+//     printf("Error: gettimeofday()\n");
+//     return 1;
+// }
