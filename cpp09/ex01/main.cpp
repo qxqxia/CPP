@@ -6,28 +6,28 @@
 
 int CalculateRPN(std::string tokens)
 {
-    std::stack<int> tmp;
+    std::stack<int> st;
 
-    if (tokens == "Error\n")
-    {
-        std::cout << tokens ;
-        exit(1);
-    }
+    // if (tokens == "Error\n")
+    // {
+    //     std::cout << tokens ;
+    //     exit(1);
+    // }
     for (size_t i = 0; i < tokens.size(); i++)
     {
         if (tokens[i] >= '0' && tokens[i] <= '9')
-            tmp.push(tokens[i] - '0');
+            st.push(tokens[i] - '0');
         else if(tokens[i] == '+' ||tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/')
         {
-            if (tmp.size() < 2)
+            if (st.size() < 2)
             {
                 std::cout << YELLOW "Error\n" RESET;
                 exit(1);
             }
-            int b = tmp.top();
-            tmp.pop();
-            int a = tmp.top();
-            tmp.pop();
+            int b = st.top();
+            st.pop();
+            int a = st.top();
+            st.pop();
             int res;
             if (tokens[i] == '+')
                 res = a + b;
@@ -45,15 +45,15 @@ int CalculateRPN(std::string tokens)
                 res = a / b;
             }
                 
-            tmp.push(res);
+            st.push(res);
         }
     }
-    if (tmp.empty())
+    if (st.empty())
     {
         std::cout << YELLOW "Error\n" RESET;
         exit(1);
     }
-    return tmp.top();
+    return st.top();
 }
 
 int main(int ac, char **av)
