@@ -25,7 +25,7 @@ int main(int ac, char **av)
 
     // read data
     if (!ifs.eof())
-        getline(ifs, line);
+        getline(ifs, line); //jeter thr headline
     while (!ifs.eof() && getline(ifs, line))
     {
         std::string left, right;
@@ -51,15 +51,38 @@ int main(int ac, char **av)
 
     //read input
     if (!ifs.eof())
-        getline(ifs,line);
+        getline(ifs,line); //jeter the headline
     while (!ifs.eof() && getline(ifs, line))
     {
         s = remove_whitesp(line);
+
+
         std::string key = s.substr(0, s.find("|"));
         std::string valstr = s.substr(s.find("|") + 1);
         double      val = atof(valstr.c_str());
         //std::cout << s << '\n';
-        
+
+        if (dict.count(key)) //if key is found
+        {
+            val = dict[key] * val;
+            s = to_string(val);
+            if (s[s.length() - 1] == '0') //if end is 0, donot show it
+            {
+                s = s.substr(0, s.length() - 1);
+            }
+            //std::cout << s << '\n';
+            std::cout << key << " => " << valstr << " = " YELLOW;
+            if (s.find("+") == std::string::npos) //scientific notation not found
+            {
+                std::cout << s << '\n' RESET;
+                continue ;
+            }
+            std::cout << std::setprecision(PRECISION) << val << '\n' RESET;
+        }
+        else
+        {
+            
+        }
     }
 
 
