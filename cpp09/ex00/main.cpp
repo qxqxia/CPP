@@ -64,7 +64,7 @@ int main(int ac, char **av)
 
         if (dict.count(key)) //if key is found
         {
-            val = dict[key] * val;
+            val = dict[key] * val; //
             s = to_string(val);
             if (s[s.length() - 1] == '0') //if end is 0, donot show it
             {
@@ -81,9 +81,27 @@ int main(int ac, char **av)
         }
         else
         {
-            
+            it = dict.upper_bound(key);
+            if (it == dict.begin())
+            {
+               std::cout << key << " => " << valstr << " = 0" << '\n';
+               continue ; 
+            }
+            it--;
+            val = (it->second * val); //
+            s = to_string(val);
+            if (s[s.length() - 1] == '0') //if end is 0, donot show it
+            {
+                s = s.substr(0, s.length() - 1);
+            }
+            //std::cout << s << '\n';
+            std::cout << key << " => " << valstr << " = " YELLOW;
+            if (s.find("+") == std::string::npos) //scientific notation not found
+            {
+                std::cout << s << '\n' RESET;
+                continue ;
+            }
+            std::cout << std::setprecision(PRECISION) << val << '\n' RESET;
         }
     }
-
-
 }
