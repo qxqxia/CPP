@@ -12,4 +12,6 @@
 
 # define PRECISION 10 
 
+std::string remove_whitesp(std::string & line);
+
 #endif
