@@ -17,5 +17,7 @@ std::string remove_whitesp(std::string & line);
 template<typename T>
 std::string to_string(const T value);
 std::string to_string(double const value);
+bool CheckParams(int ac, char **av);
+bool isNumeric(std::string & str);
 
 #endif

@@ -27,3 +27,41 @@ std::string to_string(const double value)
     oss << value;
     return oss.str();
 }
+
+double to_double_round_2(double f)
+{
+
+}
+
+bool isNumeric(std::string & str)
+{
+    size_t  i = -1;
+
+    while(++i < str.length())
+    {
+        if (str[i] < '0' || str[i] > '9')
+            return (false);
+    }
+    return (true);
+}
+
+bool CheckParams(int ac, char **av)
+{
+    std::string filename;
+
+    if (ac != 2)
+        return (false);
+    if (std::string(av[1]) == "")
+        return (false);
+    return (true);
+}
+
+void printerr(std::string msg)
+{
+
+}
+
+bool NumberCheck(std::string & str)
+{
+
+}
