@@ -3,13 +3,16 @@
 
 int main(int ac, char **av)
 {
-    (void)ac;
-    (void)av;
     std::map<std::string, double>::iterator it;
     std::map<std::string, double> dict;
     std::ifstream ifs;
     std::ofstream ofs;
     std::string input, data, line, s;
+
+    // if (!CheckParams(ac, av))
+    // {
+    //     return (printerr("could not open file."), 1);
+    // }
 
     data = "data.csv";
 
@@ -74,10 +77,10 @@ int main(int ac, char **av)
             std::cout << key << " => " << valstr << " = " YELLOW;
             if (s.find("+") == std::string::npos) //scientific notation not found
             {
-                std::cout << s << '\n' RESET;
+                std::cout << s << "\n" RESET;
                 continue ;
             }
-            std::cout << std::setprecision(PRECISION) << val << '\n' RESET;
+            std::cout << std::setprecision(PRECISION) << val << "\n" RESET;
         }
         else
         {
@@ -98,10 +101,10 @@ int main(int ac, char **av)
             std::cout << key << " => " << valstr << " = " YELLOW;
             if (s.find("+") == std::string::npos) //scientific notation not found
             {
-                std::cout << s << '\n' RESET;
+                std::cout << s << "\n" RESET;
                 continue ;
             }
-            std::cout << std::setprecision(PRECISION) << val << '\n' RESET;
+            std::cout << std::setprecision(PRECISION) << val << "\n" RESET;
         }
     }
 }
