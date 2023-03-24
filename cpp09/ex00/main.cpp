@@ -37,9 +37,6 @@ int main(int ac, char **av)
         left = line.substr(0, line.find(","));
         right = line.substr(line.find(",") + 1);
         dict[left] = atof(right.c_str());
-
-        //std::cout << left << " <- the value is -> " << atof(right.c_str()) << "\n\n";
-        //std::cout << left << " <- the value is -> " << dict[left] << '\n';
     }
 
     //open input.txt
@@ -71,17 +68,15 @@ int main(int ac, char **av)
         std::string key = s.substr(0, s.find("|"));
         std::string valstr = s.substr(s.find("|") + 1);
         double      val = atof(valstr.c_str());
-        //std::cout << s << '\n';
 
         if (dict.count(key)) //if key is found
         {
-            val = to_double_round_2(dict[key] * val); //
+            val = to_double_round_2(dict[key] * val); 
             s = to_string(val);
             if (s.length() > 1 && s[s.length() - 1] == '0') //if end is 0, donot show it
             {
                 s = s.substr(0, s.length() - 1);
             }
-            //std::cout << s << '\n';
             std::cout << key << " => " << valstr << " = " YELLOW;
             if (s.find("+") == std::string::npos) //scientific notation not found
             {
@@ -99,13 +94,12 @@ int main(int ac, char **av)
                continue ; 
             }
             it--;
-            val = to_double_round_2 ((it->second * val)); //
+            val = to_double_round_2 ((it->second * val)); 
             s = to_string(val);
             if (s.length() > 1 && s[s.length() - 1] == '0') //if end is 0, donot show it
             {
                 s = s.substr(0, s.length() - 1);
             }
-            //std::cout << s << '\n';
             std::cout << key << " => " << valstr << " = " YELLOW;
             if (s.find("+") == std::string::npos) //scientific notation not found
             {
