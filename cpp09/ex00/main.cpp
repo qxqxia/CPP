@@ -77,7 +77,7 @@ int main(int ac, char **av)
         {
             val = to_double_round_2(dict[key] * val); //
             s = to_string(val);
-            if (s[s.length() - 1] == '0') //if end is 0, donot show it
+            if (s.length() > 1 && s[s.length() - 1] == '0') //if end is 0, donot show it
             {
                 s = s.substr(0, s.length() - 1);
             }
@@ -101,7 +101,7 @@ int main(int ac, char **av)
             it--;
             val = to_double_round_2 ((it->second * val)); //
             s = to_string(val);
-            if (s[s.length() - 1] == '0') //if end is 0, donot show it
+            if (s.length() > 1 && s[s.length() - 1] == '0') //if end is 0, donot show it
             {
                 s = s.substr(0, s.length() - 1);
             }
