@@ -9,10 +9,11 @@ int main(int ac, char **av)
     std::ofstream ofs;
     std::string input, data, line, s;
 
-    // if (!CheckParams(ac, av))
-    // {
-    //     return (printerr("could not open file."), 1);
-    // }
+    if (!ParamsCheck(ac, av))
+    {
+        std::cout << "Error: could not open file.\n";
+        return (1);
+    }
 
     data = "data.csv";
 
@@ -22,7 +23,7 @@ int main(int ac, char **av)
     ifs.open(data.c_str());
     if (ifs.fail())
     {
-        std::cout << "Could not open file.\n";
+        std::cout << "Error: Could not open file.\n";
         return (1);
     }
 
@@ -48,7 +49,7 @@ int main(int ac, char **av)
     ifs.open(input.c_str());
     if (ifs.fail())
     {
-        std::cout << "Could not open file.\n";
+        std::cout << "Error: Could not open file.\n";
         return (1);
     }
 
@@ -58,8 +59,15 @@ int main(int ac, char **av)
     while (!ifs.eof() && getline(ifs, line))
     {
         s = remove_whitesp(line);
-
-
+        if (!InputCheck(s))
+        {
+            std::cout << "Error: bad input => " + line << '\n';
+            continue;
+        }
+        if (!NumberCheck(s))
+        {
+            continue;
+        }
         std::string key = s.substr(0, s.find("|"));
         std::string valstr = s.substr(s.find("|") + 1);
         double      val = atof(valstr.c_str());
@@ -67,7 +75,7 @@ int main(int ac, char **av)
 
         if (dict.count(key)) //if key is found
         {
-            val = dict[key] * val; //
+            val = to_double_round_2(dict[key] * val); //
             s = to_string(val);
             if (s[s.length() - 1] == '0') //if end is 0, donot show it
             {
@@ -91,7 +99,7 @@ int main(int ac, char **av)
                continue ; 
             }
             it--;
-            val = (it->second * val); //
+            val = to_double_round_2 ((it->second * val)); //
             s = to_string(val);
             if (s[s.length() - 1] == '0') //if end is 0, donot show it
             {
