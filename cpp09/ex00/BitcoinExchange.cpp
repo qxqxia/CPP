@@ -52,8 +52,6 @@ bool    InputCheck(std::string & str)
     std::string date;
     std::string num;
 
-    // if ((int)str.length() < 12)
-    //     return (false);
     if (str[10] != '|')
         return (false);
     date = str.substr(0, 10);
@@ -107,7 +105,6 @@ bool    DateCheck(std::string & str)
     std::stringstream(s3) >> day;
     if (day < 1 || day > 31)
         return (false);
-
     int months[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     std::stringstream(s1) >> year;

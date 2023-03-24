@@ -143,10 +143,7 @@ void printDeque(std::deque<long long> d, bool option)
     if (option == AFTER)
         std::cout << "After: \t" GREEN;
     if (d.size() < 11)
-    {
-        // int i = -1;
-        // while(++i < (int)d.size())
-        //     std::cout << d[i] << ' ';   
+    {  
         it = d.begin();
         while(it != d.end())
         {
@@ -156,10 +153,6 @@ void printDeque(std::deque<long long> d, bool option)
     }
     else
     {
-        // int i = -1;
-        // while(++i < 4)
-        //     std::cout << d[i] << ' ';
-        // std::cout << RESET "[...]";
         it = d.begin();
         while(it != d.begin() + 4)
         {
