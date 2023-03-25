@@ -5,8 +5,8 @@
 # include <map>
 # include <fstream> //ifstream and ofstream
 # include <math.h>  
-# include <sstream>
-# include <iomanip>
+# include <sstream> //stringstream
+# include <iomanip> //setprecision
 # define YELLOW "\033[0;33m"
 # define GREEN "\033[0;32m"
 # define RESET "\033[0;0m"

@@ -4,10 +4,10 @@
 int main(int ac, char **av)
 {
     std::map<std::string, double>::iterator it;
-    std::map<std::string, double> dict;
-    std::ifstream ifs;
-    std::ofstream ofs;
-    std::string input, data, line, s;
+    std::map<std::string, double>           dict;
+    std::ifstream                           ifs;
+    std::ofstream                           ofs;
+    std::string                             input, data, line, s;
 
     if (!ParamsCheck(ac, av))
     {
@@ -29,10 +29,10 @@ int main(int ac, char **av)
 
     // read data
     if (!ifs.eof())
-        getline(ifs, line); //jeter thr headline
+        getline(ifs, line); //jeter the headline
     while (!ifs.eof() && getline(ifs, line))
     {
-        std::string left, right;
+        std::string     left, right;
 
         left = line.substr(0, line.find(","));
         right = line.substr(line.find(",") + 1);
@@ -73,7 +73,7 @@ int main(int ac, char **av)
         {
             val = to_double_round_2(dict[key] * val); 
             s = to_string(val);
-            if (s.length() > 1 && s[s.length() - 1] == '0') //if end is 0, donot show it
+            if (s.length() > 1 && s[s.length() - 1] == '0') //if end is 0, don't show it
             {
                 s = s.substr(0, s.length() - 1);
             }

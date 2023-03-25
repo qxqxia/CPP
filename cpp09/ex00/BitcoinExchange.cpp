@@ -28,7 +28,7 @@ std::string to_string(const double value)
     return oss.str();
 }
 
-double to_double_round_2(double f)
+double to_double_round_2(double f) //rounding
 {
     double left = (int)(f * 100 + .5);
     double right = (double) left / 100;
@@ -110,7 +110,7 @@ bool    DateCheck(std::string & str)
     std::stringstream(s1) >> year;
     std::stringstream(s2) >> month;
 
-    if (!(year % 400) || (year % 100 && !(year % 4)))
+    if (!(year % 400) || (year % 100 && !(year % 4))) //leap year
         months[1] = 29;
     if (day > months[month - 1])
         return (false);
@@ -147,6 +147,5 @@ bool    NumberCheck(std::string & str)
 		std::cout << "Error: too large a number.\n";
 		return (false);
 	}
-
 	return (true);
 }
